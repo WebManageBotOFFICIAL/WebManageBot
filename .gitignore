@@ -9,3 +9,4 @@ node_modules
 replit.nix
 indext.js
 logs.txt
+package-lock.json
