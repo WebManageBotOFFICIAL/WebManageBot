@@ -1,0 +1,11 @@
+# important files
+.env
+core
+
+# files and folders that take up storage
+node_modules
+.config
+.replit
+replit.nix
+indext.js
+logs.txt
