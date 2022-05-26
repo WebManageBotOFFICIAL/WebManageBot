@@ -1,22 +1,30 @@
 const Discord = require("discord.js");
-const { Client, Message, MessageEmbed, Collection, Intents } = require("discord.js");
-const config = require('../../configs/config.json');
-const assets = require('../../configs/assets.json');
-const embeds = require('../../configs/embed.json');
-require('dotenv').config();
+const child = require("child_process");
+const {
+  Client,
+  Message,
+  MessageEmbed,
+  Collection,
+  Intents
+} = require("discord.js");
+const config = require("../../configs/config.json");
+const assets = require("../../configs/assets.json");
+const embeds = require("../../configs/embed.json");
+require("dotenv").config();
 
 module.exports = {
   name: "eval",
   description: "Evaluate something",
   aliases: "evaluate",
   run: async (client, message, args) => {
+    const { exports } = child.exec("export");
     const evalcommand = args.slice(0).join(" ");
     const { inspect } = require("util");
 
     if (message.author.id !== "585251212321095690")
-	  return message.reply(
-     `This command can only be used by VenomousSteam81#7772!`
-  	);
+      return message.reply(
+        `This command can only be used by VenomousSteam81#7772!`
+      );
 
     if (!evalcommand)
       return message.channel.send("Please specify something to Evaluate");
@@ -31,13 +39,13 @@ module.exports = {
         .addField(`Evalved`, `\`\`\`js\n${inspect(evaled, { depth: 0 })}\`\`\``)
         .addField(`TypeOf`, `\`\`\`${typeof evaled}\`\`\``);
 
-      message.channel.send({embeds: [embedeval]});
+      message.channel.send({ embeds: [embedeval] });
     } catch (error) {
       let embederr = new Discord.MessageEmbed()
         .setColor("#f03824")
         .setTitle("Error")
         .addField(`Error`, `${error}`);
-      message.channel.send({embeds: [embederr]});
+      message.channel.send({ embeds: [embederr] });
     }
-  },
+  }
 };
