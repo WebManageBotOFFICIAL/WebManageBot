@@ -15,7 +15,8 @@ module.exports = {
       let ignored = ["util", "database", "db"];
 
       const emo = {
-        info: "❓",
+        bot: "🤖",
+        peoples: "❓",
 				fun: "🎮",
 				mod: "👁",
         server: "📝",
@@ -24,7 +25,8 @@ module.exports = {
       };
 
       const catinfo = {
-        info: "Info Land",
+        bot: "Meh Infos",
+        peoples: "Learn Info About A User",
 				fun: "Fun Land",
 				mod: "Punish those baddies from existence",
         server: "Manage the server",

@@ -16,7 +16,8 @@ module.exports = {
 		const minutes = (d.minutes() == 1) ? `${d.minutes()} minute` : `${d.minutes()} minutes`;
 		const mainStats = stripIndent`
 	  	  Owner      :: VenomousSteam81
-	  	  Host       :: Railway + Github
+	  	  Host       :: Replit (Free Plan) + Uptime Robot
+        UptimeRobot:: https://stats.uptimerobot.com/3VO8ZCX5Gl
 	  	  Prefix     :: ${config.prefix}
 	   `;
 		const clientStats = stripIndent`
