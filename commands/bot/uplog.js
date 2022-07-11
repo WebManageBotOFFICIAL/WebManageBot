@@ -1,9 +1,10 @@
 const { MessageEmbed, Message, Client } = require("discord.js");
 const config = require('../../configs/config.json');
+const { stripIndent } = require('common-tags');
 const rTips = require('../../configs/tips.json'); // new feature to come soon
 
 module.exports = {
-	name: "updates",
+	name: "uplog",
 	description: "Shows my latest changelog",
 	aliases: ["changelog", "update", "uplog", "cl"],
 	run: async (client, message, args) => {
@@ -12,8 +13,8 @@ module.exports = {
 	Last       :: 1.2.0
 	`;
 		const changeLogs = stripIndent`
-	* Changed the \`commands\` structure
-  * Changed stats command
+	* Changed the commands structure
+* Changed stats command
 	`;
 		
 		const embed = new MessageEmbed()

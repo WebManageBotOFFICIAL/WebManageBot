@@ -17,8 +17,7 @@ module.exports = {
 		const mainStats = stripIndent`
 	  	  Owner      :: VenomousSteam81
 	  	  Host       :: Replit (Free Plan) + Uptime Robot
-        UptimeRobot:: https://stats.uptimerobot.com/3VO8ZCX5Gl
-	  	  Prefix     :: ${config.prefix}
+	  	  Prefix     :: ${config.defaultPrefix}
 	   `;
 		const clientStats = stripIndent`
           Servers    :: ${message.client.guilds.cache.size}
@@ -35,10 +34,15 @@ module.exports = {
           RAM        :: ${totalMemMb} MB
           RAM Usage  :: ${ramUsage} MB
        `;
-		const extraStats = stripIndent`
+		const botStats = stripIndent`
 		  Tokens     :: 6 token resets
 		  Type       :: Stable
 	   `;
+
+    const links = stripIndent`
+      UptimeRobot:: [stats](https://stats.uptimerobot.com/3VO8ZCX5Gl)
+      GitHub     :: [WebManageBot](https://github.com/WebManageBotOFFICIAL/WebManageBot)
+    `;
 
 		const embed = new MessageEmbed()
 			.setTitle('Bot\'s Statistics')
@@ -47,7 +51,8 @@ module.exports = {
 			.addField('Main', `\`\`\`asciidoc\n${mainStats}\`\`\``)
 			.addField('Client', `\`\`\`asciidoc\n${clientStats}\`\`\``)
 			.addField('Server', `\`\`\`asciidoc\n${serverStats}\`\`\``)
-			.addField('Extra stuff', `\`\`\`asciidoc\n${extraStats}\`\`\``)
+			.addField('Bot', `\`\`\`asciidoc\n${botStats}\`\`\``)
+      .addField('Links', `${links}`)
 			.setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
 			.setTimestamp()
 			.setColor(message.guild.me.displayHexColor);

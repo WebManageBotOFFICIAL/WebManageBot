@@ -8,6 +8,6 @@ module.exports = {
 	name: "8ball",
 	description: "Ask the 8ball a question, and you will get an answer",
 	run: async (message, args) => {
-		message.channel.send(ball());
+		message.reply(ball());
 	},
 };
