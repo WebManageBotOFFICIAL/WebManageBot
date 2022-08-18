@@ -26,6 +26,7 @@ const client = new Client({
 		'GUILD_EMOJIS_AND_STICKERS',
 		'GUILD_MESSAGE_REACTIONS',
 		'GUILD_MESSAGES',
+		'DIRECT_MESSAGES'
 	],
 });
 module.exports = client;

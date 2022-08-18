@@ -10,7 +10,7 @@ const {
 const config = require("../../configs/config.json");
 const assets = require("../../configs/assets.json");
 const embeds = require("../../configs/embed.json");
-require("dotenv").config();
+const dotenv = require("dotenv").config();
 
 module.exports = {
   name: "eval",
