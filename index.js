@@ -18,7 +18,11 @@ const client = new Client({
 		parse: ['roles', 'users', 'everyone'],
 		repliedUser: true,
 	},
-	partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
+	partials: [
+		'MESSAGE',
+		'CHANNEL',
+		'REACTION'
+	],
 	intents: [
 		'GUILDS',
 		'GUILD_MEMBERS',

@@ -1,6 +1,5 @@
 module.exports = {
-	name: 'football',
-	aliases: ["fb", "feet", "foot", "ball"],
+	name: 'soccer',
 	description: "football",
 	run: async (client, message, args) => {
 		const positions = {

@@ -4,6 +4,7 @@ const translate = require('@iamtraction/google-translate');
 module.exports = {
   name: "translate",
   description: "Translates the given message",
+	usage: "language text",
   run: async (client, message, args) => {
         const txt = args.slice(1).join(" ")
         const lang = args[0]

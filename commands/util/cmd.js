@@ -3,7 +3,7 @@ const child = require('child_process');
 
 module.exports = {
 	name: "exec",
-	description: "Executes remote commands from discord to railway",
+	description: "Executes remote commands from discord to host",
 	aliases: "cmd",
 	run: async (client, message, args) => {
   if (message.author.id !== "585251212321095690")

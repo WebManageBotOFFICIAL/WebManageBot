@@ -1,6 +1,7 @@
 module.exports = {
 	name: "say",
 	description: "Make me repeat what you want me to say",
+	usage: "text",
 		run: async (client, message, args) => {
 			const command = args.join(" ");
 			if(!command) return message.reply('There were no commands given!');
