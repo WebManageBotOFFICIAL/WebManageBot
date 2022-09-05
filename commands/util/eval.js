@@ -11,6 +11,7 @@ const config = require("../../configs/config.json");
 const assets = require("../../configs/assets.json");
 const embeds = require("../../configs/embed.json");
 const dotenv = require("dotenv").config();
+const fs = require("fs");
 
 module.exports = {
   name: "eval",
