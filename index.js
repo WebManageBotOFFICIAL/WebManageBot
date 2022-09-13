@@ -1,4 +1,4 @@
-const { Client, Message, MessageEmbed, Collection } = require('discord.js');
+const { Client, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
 const colors = require('colors');
 const fs = require('fs');
 const ee = require('./configs/embed.json');
