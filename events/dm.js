@@ -16,7 +16,7 @@ client.on('messageCreate', async message => {
 		const randomDM = [randomMessage];
 */ //for a later date...
     if (message.channel.type === 'DM') {
-        console.log(message.author.tag+message.content)
+        // console.log(message.author.tag+message.content)
 				message.reply(`Hello. Your message has been logged for quality insurance`)
 
         const dmLogEmbed = new MessageEmbed()
