@@ -1,11 +1,12 @@
 const fs = require("fs");
 const { Client, Message, MessageEmbed, Collection, Intents } = require("discord.js");
+const config = require('../../configs/config.json');
 
 module.exports = {
 	name: 'reload',
 	description: 'Reload commands without hassle',
 	run: async (client, message, args) => {
-	if (message.author.id !== "585251212321095690")
+	if (message.author.id !== config.ownerId)
 	  return message.reply(
      `This command can only be used by VenomousSteam81#7772!`
   	);

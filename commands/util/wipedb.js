@@ -1,4 +1,5 @@
 const { Client, Message, MessageEmbed, Collection, Intents } = require("discord.js");
+const config = require('../../configs/config.json');
 const Database = require("@replit/database");
 const prefixes = new Database()
 
@@ -7,7 +8,7 @@ module.exports = {
   description: "Wipe all keys in the `prefixes` database",
   aliases: "wipedb",
   	run: async (client, message, args) => {
-    if (message.author.id !== "585251212321095690")
+    if (message.author.id !== config.ownerId)
       return message.reply(
         `This command can only be used by VenomousSteam81#7772!`
       );

@@ -23,7 +23,7 @@ module.exports = {
 		const env = child.exec('env')
 		const evalcommand = args.slice(0).join(" ");
 		const { inspect } = require("util");
-		if (message.author.id !== "585251212321095690")
+		if (message.author.id !== config.ownerId)
 			return message.reply(
 				`This command can only be used by VenomousSteam81#7772!`
 			);
