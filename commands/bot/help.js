@@ -2,14 +2,18 @@ const { MessageEmbed, Message, Client } = require("discord.js");
 const { readdirSync } = require("fs");
 let color = "#36393f";
 const config = require('../../configs/config.json');
-const prefix = config.defaultPrefix;
+const cprefix = config.defaultPrefix;
+const Database = require("@replit/database");
+const prefixes = new Database();
 
 module.exports = {
   name: "help",
   aliases: "h",
   description: "Shows all available commands",
   run: async (client, message, args) => {
-    if (!args[0]) {
+		getPrefix = await prefixes.get(message.guild.id).then((value) => {return value});
+    let prefix = getPrefix || cprefix
+			if (!args[0]) {
       let categories = [];
 
       let ignored = ["util", "database", "db"];

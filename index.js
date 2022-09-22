@@ -4,7 +4,7 @@ const fs = require('fs');
 const ee = require('./configs/embed.json');
 const winston = require('winston');
 const config = require('./configs/config.json');
-const defaultPrefix = config.defaultPrefix;
+const cprefix = config.defaultPrefix;
 
 const client = new Client({
 	messageCacheLifetime: 60,
