@@ -16,7 +16,7 @@ module.exports = {
 		const minutes = (d.minutes() == 1) ? `${d.minutes()} minute` : `${d.minutes()} minutes`;
 		const mainStats = stripIndent`
 	  	  Owner      :: VenomousSteam81
-	  	  Host       :: Replit (Free Plan) + Uptime Robot
+	  	  Host       :: [Railway Hosting](https://railway.app/)
 	  	  Prefix     :: ${config.defaultPrefix}
 	   `;
 		const clientStats = stripIndent`
@@ -35,14 +35,12 @@ module.exports = {
           RAM Usage  :: ${ramUsage} MB
        `;
 		const botStats = stripIndent`
-		  Tokens     :: 6 token resets
 		  Type       :: Stable
 	   `;
 
-    const links = stripIndent`
-      UptimeRobot:: [stats](https://stats.uptimerobot.com/3VO8ZCX5Gl)
-      GitHub     :: [WebManageBot](https://github.com/WebManageBotOFFICIAL/WebManageBot)
-    `;
+    	const links = stripIndent`
+      	  GitHub     :: [WebManageBot](https://github.com/WebManageBotOFFICIAL/WebManageBot)
+    	`;
 
 		const embed = new MessageEmbed()
 			.setTitle('Bot\'s Statistics')
@@ -52,7 +50,7 @@ module.exports = {
 			.addField('Client', `\`\`\`asciidoc\n${clientStats}\`\`\``)
 			.addField('Server', `\`\`\`asciidoc\n${serverStats}\`\`\``)
 			.addField('Bot', `\`\`\`asciidoc\n${botStats}\`\`\``)
-      .addField('Links', `${links}`)
+      		.addField('Links', `${links}`)
 			.setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
 			.setTimestamp()
 			.setColor(message.guild.me.displayHexColor);
