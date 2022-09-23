@@ -4,7 +4,7 @@ const client = require('..');
 const activities = [
 	"for the w+help command",
 	"my code on github",
-	"venom do tests on me",
+	"some servers",
 	"ur mom",
 	"~/configs/config.json",
 	"index.js",
