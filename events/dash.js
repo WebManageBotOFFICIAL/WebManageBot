@@ -1,8 +1,7 @@
 const { request } = require('undici');
 const express = require('express');
-const clientId = require('../configs/config.json');
+const { port, clientId } = require('../configs/config.json');
 const clientSecret = process.env.clientSecret
-const port = 3000;
 
 async function getJSONResponse(body) {
 	let fullBody = '';
