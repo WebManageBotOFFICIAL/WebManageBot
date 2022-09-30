@@ -51,7 +51,7 @@ app.get('/', async ({ query }, response) => {
 		}
 	}
 
-	return response.sendFile('../web/index.html', { root: '.' });
+	return response.sendFile('../web/index.html', { root: '../web/' });
 });
 
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
