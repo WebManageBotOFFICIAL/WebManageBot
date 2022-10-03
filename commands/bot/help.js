@@ -49,7 +49,7 @@ module.exports = {
       });
       const embed = new MessageEmbed()
         .setTitle(`\`\`Help Menu\`\``)
-        .setDescription(`\`\`My Prefix is : ${prefix} \`\`\n To check out a category, use command ${prefix}help [category] \n\n [Invite Me Now](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot%20applications.commands) \n [My Support Server](https://discord.gg/aFCQSyzNU8)`)
+        .setDescription(`\`\`My Prefix is : ${prefix} \`\`\n To check out a category, use command ${prefix}help [category] \n\n [Invite Me Now](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=4391570373878&redirect_uri=https%3A%2F%2Fwebmanagebot-production.up.railway.app%2F&response_type=code&scope=identify%20connections%20guilds%20bot) \n [My Support Server](https://discord.gg/aFCQSyzNU8)`)
         .addFields(categories)
         .setFooter(`Requested by ${message.author.tag}`)
         .setTimestamp()
