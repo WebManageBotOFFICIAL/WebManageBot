@@ -1,9 +1,10 @@
 const client = require("..");
 const { Message, MessageEmbed, Collection } = require('discord.js');
+const idConfig = require('../configs/idconfig.json');
 
 // Channel Topic Updating 
 client.on("guildChannelTopicUpdate", async (channel, oldTopic, newTopic) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const TopicUpdate = new MessageEmbed()
 		.setTitle('Topic Updated!')
@@ -18,7 +19,7 @@ client.on("guildChannelTopicUpdate", async (channel, oldTopic, newTopic) => {
 
 // Channel Permission Updating
 client.on("guildChannelPermissionsUpdate", async (channel, oldPermissions, newPermissions) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const PermissionUpdate = new MessageEmbed()
 		.setTitle('Permission Updated!')
@@ -37,7 +38,7 @@ client.on("guildChannelPermissionsUpdate", async (channel, oldPermissions, newPe
 
 // unhandled Guild Channel Update
 client.on("unhandledGuildChannelUpdate", async (oldChannel, newChannel) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const unhandledGuildChannelUpdate = new MessageEmbed()
 		.setTitle('Channel Updated!')
@@ -52,7 +53,7 @@ client.on("unhandledGuildChannelUpdate", async (oldChannel, newChannel) => {
 
 // Member Started Boosting
 client.on("guildMemberBoost", async (member) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const MemberBoost = new MessageEmbed()
 		.setTitle('User Started Boosting!')
@@ -66,7 +67,7 @@ client.on("guildMemberBoost", async (member) => {
 
 // Member Unboosted
 client.on("guildMemberUnboost", async (member) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const MemberUnboost = new MessageEmbed()
 		.setTitle('User Stoped Boosting!')
@@ -81,7 +82,7 @@ client.on("guildMemberUnboost", async (member) => {
 
 // Member Got Role
 client.on("guildMemberRoleAdd", async (member, role) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const MemberRoleAdd = new MessageEmbed()
 		.setTitle('User Got Role!')
@@ -96,7 +97,7 @@ client.on("guildMemberRoleAdd", async (member, role) => {
 
 // Member Lost Role
 client.on("guildMemberRoleRemove", async (member, role) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const MemberRoleRemove = new MessageEmbed()
 		.setTitle('User Lost Role!')
@@ -111,7 +112,7 @@ client.on("guildMemberRoleRemove", async (member, role) => {
 
 // Nickname Changed
 client.on("guildMemberNicknameUpdate", async (member, oldNickname, newNickname) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const MemberNicknameUpdate = new MessageEmbed()
 		.setTitle('Nickname Updated')
@@ -126,7 +127,7 @@ client.on("guildMemberNicknameUpdate", async (member, oldNickname, newNickname) 
 
 // Member Joined
 client.on("guildMemberEntered", async (member) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const MemberJoined = new MessageEmbed()
 		.setTitle('User Joined')
@@ -141,7 +142,7 @@ client.on("guildMemberEntered", async (member) => {
 
 // Server Boost Level Up
 client.on("guildBoostLevelUp", async (guild, oldLevel, newLevel) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const LevelUp = new MessageEmbed()
 		.setTitle('Server Boost Level Up')
@@ -156,7 +157,7 @@ client.on("guildBoostLevelUp", async (guild, oldLevel, newLevel) => {
 
 // Server Boost Level Down
 client.on("guildBoostLevelDown", async (guild, oldLevel, newLevel) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const LevelDown = new MessageEmbed()
 		.setTitle('Server Boost Level Down')
@@ -171,7 +172,7 @@ client.on("guildBoostLevelDown", async (guild, oldLevel, newLevel) => {
 
 // Banner Added
 client.on("guildBannerAdd", async (guild, bannerURL) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const BannerAdd = new MessageEmbed()
 		.setTitle('Server Got a new banner')
@@ -186,7 +187,7 @@ client.on("guildBannerAdd", async (guild, bannerURL) => {
 
 // AFK Channel Added
 client.on("guildAfkChannelAdd", async (guild, afkChannel) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const AFKAdd = new MessageEmbed()
 		.setTitle('AFK Channel Added')
@@ -201,7 +202,7 @@ client.on("guildAfkChannelAdd", async (guild, afkChannel) => {
 
 // Guild Vanity Add
 client.on("guildVanityURLAdd", async (guild, vanityURL) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const VanityAdd = new MessageEmbed()
 		.setTitle('Vanity Link Added')
@@ -216,7 +217,7 @@ client.on("guildVanityURLAdd", async (guild, vanityURL) => {
 
 // Guild Vanity Remove
 client.on("guildVanityURLRemove", async (guild, vanityURL) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const VanityRemove = new MessageEmbed()
 		.setTitle('Vanity Link Removed')
@@ -231,7 +232,7 @@ client.on("guildVanityURLRemove", async (guild, vanityURL) => {
 
 // Guild Vanity Link Updated
 client.on("guildVanityURLUpdate", async (guild, oldVanityURL, newVanityURL) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const VanityUpdated = new MessageEmbed()
 		.setTitle('Vanity Link Updated')
@@ -246,7 +247,7 @@ client.on("guildVanityURLUpdate", async (guild, oldVanityURL, newVanityURL) => {
 
 // Message Pinned
 client.on("messagePinned", async (message) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const MessagePinned = new MessageEmbed()
 		.setTitle('Message Pinned')
@@ -260,7 +261,7 @@ client.on("messagePinned", async (message) => {
 
 // Message Edited
 client.on("messageContentEdited", async (message, oldContent, newContent) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const MessageEdited = new MessageEmbed()
 		.setTitle('Message Edited')
@@ -302,7 +303,7 @@ client.on("guildMemberOnline", async (member, newStatus) => {
 
 // Role Position Updated
 client.on("rolePositionUpdate", async (role, oldPosition, newPosition) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const RolePositionUpdated = new MessageEmbed()
 		.setTitle('Role Position Updated')
@@ -317,7 +318,7 @@ client.on("rolePositionUpdate", async (role, oldPosition, newPosition) => {
 
 // Role Permission Updated
 client.on("rolePermissionsUpdate", async (role, oldPermissions, newPermissions) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const RolePermissionUpdated = new MessageEmbed()
 		.setTitle('Role Permission Updated')
@@ -332,7 +333,7 @@ client.on("rolePermissionsUpdate", async (role, oldPermissions, newPermissions) 
 
 // Avatar Updated
 client.on("userAvatarUpdate", async (user, oldAvatarURL, newAvatarURL) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const AvatarUpdated = new MessageEmbed()
 		.setTitle('Avatar Updated')
@@ -347,7 +348,7 @@ client.on("userAvatarUpdate", async (user, oldAvatarURL, newAvatarURL) => {
 
 // Username Updated
 client.on("userUsernameUpdate", async (user, oldUsername, newUsername) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const Username = new MessageEmbed()
 		.setTitle('Username Updated')
@@ -362,7 +363,7 @@ client.on("userUsernameUpdate", async (user, oldUsername, newUsername) => {
 
 // Discriminator Updated
 client.on("userDiscriminatorUpdate", async (user, oldDiscriminator, newDiscriminator) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const Discriminator = new MessageEmbed()
 		.setTitle('Discriminator Updated')
@@ -377,7 +378,7 @@ client.on("userDiscriminatorUpdate", async (user, oldDiscriminator, newDiscrimin
 
 // Flags Updated
 client.on("userFlagsUpdate", async (user, oldFlags, newFlags) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const FlagsUpdate = new MessageEmbed()
 		.setTitle('Flags Updated')
@@ -392,7 +393,7 @@ client.on("userFlagsUpdate", async (user, oldFlags, newFlags) => {
 
 // Joined VC
 client.on("voiceChannelJoin", async (member, channel) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const VCJoined = new MessageEmbed()
 		.setTitle('Voice Channel Joined')
@@ -407,7 +408,7 @@ client.on("voiceChannelJoin", async (member, channel) => {
 
 // Left VC
 client.on("voiceChannelLeave", async (member, channel) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const VCLeft = new MessageEmbed()
 		.setTitle('Voice Channel Left')
@@ -422,7 +423,7 @@ client.on("voiceChannelLeave", async (member, channel) => {
 
 // VC Switch
 client.on("voiceChannelSwitch", async (member, oldChannel, newChannel) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const VCSwitch = new MessageEmbed()
 		.setTitle('Voice Channel Switched')
@@ -437,7 +438,7 @@ client.on("voiceChannelSwitch", async (member, oldChannel, newChannel) => {
 
 // VC Mute
 client.on("voiceChannelMute", async (member, MuteType) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const VCMute = new MessageEmbed()
 		.setTitle('User Muted')
@@ -452,7 +453,7 @@ client.on("voiceChannelMute", async (member, MuteType) => {
 
 // VC Unmute
 client.on("voiceChannelUnmute", async (member, MuteType) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const VCUnmute = new MessageEmbed()
 		.setTitle('User Unmuted')
@@ -467,7 +468,7 @@ client.on("voiceChannelUnmute", async (member, MuteType) => {
 
 // VC Defean
 client.on("voiceChannelDeaf", async (member, deafType) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const VCDeafen = new MessageEmbed()
 		.setTitle('User Deafend')
@@ -482,7 +483,7 @@ client.on("voiceChannelDeaf", async (member, deafType) => {
 
 // VC Undefean
 client.on("voiceChannelUndeaf", async (member, deafType) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const VCUndeafen = new MessageEmbed()
 		.setTitle('User Undeafend')
@@ -497,7 +498,7 @@ client.on("voiceChannelUndeaf", async (member, deafType) => {
 
 // User Started to Stream
 client.on("voiceStreamingStart", async (member, voiceChannel) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const UserStreaming = new MessageEmbed()
 		.setTitle('User Started to Stream')
@@ -512,7 +513,7 @@ client.on("voiceStreamingStart", async (member, voiceChannel) => {
 
 // User Stopped to Stream
 client.on("voiceStreamingStart", async (member, voiceChannel) => {
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	const UserStoppedStreaming = new MessageEmbed()
 		.setTitle('User Stopped to Stream')

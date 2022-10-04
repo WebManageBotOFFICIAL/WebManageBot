@@ -1,4 +1,6 @@
 const client = require("..");
+const idConfig = require('../configs/idconfig.json');
+
 client.on('guildMemberRemove', async member => {
 	const fetchedLogs = await member.guild.fetchAuditLogs({
 		limit: 1,
@@ -8,7 +10,9 @@ client.on('guildMemberRemove', async member => {
 	const kickLog = fetchedLogs.entries.first();
 
 	// Perform a coherence check to make sure that there's *something*
-	if (!kickLog) return console.log(`${member.user.tag} left the guild, most likely of their own will.`);
+	const channelName = idconfig.logOldChannelName;
+	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
+	if (!kickLog) return LogChannel.send(`${member.user.tag} left the guild, most likely of their own will.`);
 
 	// Now grab the user object of the person who kicked the member
 	// Also grab the target of this action to double-check things

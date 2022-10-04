@@ -1,4 +1,6 @@
 const client = require("..");
+const idConfig = require('../configs/idconfig.json');
+
 client.on('guildBanAdd', async ban => {
 	const fetchedLogs = await ban.guild.fetchAuditLogs({
 		limit: 1,
@@ -8,7 +10,7 @@ client.on('guildBanAdd', async ban => {
 	const banLog = fetchedLogs.entries.first();
 
 	// Perform a coherence check to make sure that there's *something*
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	if (!banLog) return LogChannel.send(`${ban.user.tag} was banned from ${ban.guild.name} but no audit log could be found.`);
 

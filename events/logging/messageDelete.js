@@ -1,4 +1,6 @@
 const client = require("..");
+const idConfig = require('../configs/idconfig.json');
+
 client.on('messageDelete', message => {
     // Ignore direct messages
 	if (!message.guild) return;
@@ -10,7 +12,7 @@ client.on('messageDelete', message => {
 	const deletionLog = fetchedLogs.entries.first();
 
 	// Perform a coherence check to make sure that there's *something*
-	const channelName = 'discord-log';
+	const channelName = idconfig.logOldChannelName;
 	const LogChannel = msg.guild.channels.cache.find(ch => ch.name(channelName));
 	if (!deletionLog) return LogChannel.send(`A message by ${message.author.tag} was deleted, but no relevant audit logs were found.`);
 
