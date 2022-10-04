@@ -19,18 +19,18 @@ const client = new Client({
 		repliedUser: true,
 	},
 	intents: [
-		'GatewayIntentBits.Guilds',
-		'GatewayIntentBits.Guild_Members',
-		'GatewayIntentBits.Guild_Bans',
-		'GatewayIntentBits.Guild_Emojis_And_Stickers',
-		'GatewayIntentBits.Guild_Message_Reactions',
-		'GatewayIntentBits.Guild_Messages',
-		'GatewayIntentBits.Direct_Messages'
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.Guild_Members,
+		GatewayIntentBits.Guild_Bans,
+		GatewayIntentBits.Guild_Emojis_And_Stickers,
+		GatewayIntentBits.Guild_Message_Reactions,
+		GatewayIntentBits.Guild_Messages,
+		GatewayIntentBits.Direct_Messages
 	],
 	partials: [
-		'Partials.Message',
-		'Partials.Channel',
-		'Partials.Reaction'
+		Partials.Message,
+		Partials.Channel,
+		Partials.Reaction
 	],
 });
 module.exports = client;
