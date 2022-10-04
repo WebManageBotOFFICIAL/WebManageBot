@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Partials } = require('discord.js');
+const { Client, GatewayIntentBits, Partials, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
 const colors = require('colors');
 const fs = require('fs');
 const ee = require('./configs/embed.json');
