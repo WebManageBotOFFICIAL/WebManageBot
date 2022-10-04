@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Partials, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
+const { Client, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
 const colors = require('colors');
 const fs = require('fs');
 const ee = require('./configs/embed.json');
@@ -18,13 +18,19 @@ const client = new Client({
 		parse: ['roles', 'users', 'everyone'],
 		repliedUser: true,
 	},
-	intents: [
-		GatewayIntentBits.Guilds
-	],
 	partials: [
-		Partials.Message,
-		Partials.Channel,
-		Partials.Reaction
+		'MESSAGE',
+		'CHANNEL',
+		'REACTION'
+	],
+	intents: [
+		'GUILDS',
+		'GUILD_MEMBERS',
+		'GUILD_BANS',
+		'GUILD_EMOJIS_AND_STICKERS',
+		'GUILD_MESSAGE_REACTIONS',
+		'GUILD_MESSAGES',
+		'DIRECT_MESSAGES'
 	],
 });
 module.exports = client;
@@ -62,7 +68,7 @@ client.categories = fs.readdirSync('./commands/');
 	require(`./handlers/${handler}`)(client);
 });
 
-client.login(process.env.beta_token);
+client.login(process.env.stable_token);
 
 process.on("unhandledRejection", (reason, p) => {
 	console.log(reason, p),
