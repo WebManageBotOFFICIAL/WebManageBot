@@ -1,10 +1,10 @@
 const { Message, MessageEmbed, Collection } = require('..');
-const Database = require("@replit/database");
+//const Database = require("@replit/database");
 const config = require("../configs/config.json");
 var ee = require("../configs/embed.json");
 const client = require("..");
 const prefix = config.defaultPrefix
-const prefixes = new Database();
+//const prefixes = new Database();
 
 client.on("messageCreate", async (message) => {
 	const { escapeRegex, onCoolDown } = require("../utils/function.js");
