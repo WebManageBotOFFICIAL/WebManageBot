@@ -34,10 +34,12 @@ module.exports = {
           RAM        :: ${totalMemMb} MB
           RAM Usage  :: ${ramUsage} MB
        `;
-		const botStats = stripIndent`
-		  Type       :: Stable
+		const railwayGithubStats = stripIndent`
+		  GIT Branch :: ${process.env.RAILWAY_GIT_BRANCH()}
+		  GIT Owner  :: ${process.env.RAILWAY_GIT_REPO_OWNER()}
+		  GIT Commit :: ${process.env.RAILWAY_GIT_COMMIT_MESSAGE()}
+		  Environment:: ${process.env.RAILWAY_ENVIRONMENT()}
 	   `;
-
     	const links = stripIndent`
       	  GitHub     :: [WebManageBot](https://github.com/WebManageBotOFFICIAL/WebManageBot)
     	`;
@@ -49,7 +51,7 @@ module.exports = {
 			.addField('Main', `\`\`\`asciidoc\n${mainStats}\`\`\``)
 			.addField('Client', `\`\`\`asciidoc\n${clientStats}\`\`\``)
 			.addField('Server', `\`\`\`asciidoc\n${serverStats}\`\`\``)
-			.addField('Bot', `\`\`\`asciidoc\n${botStats}\`\`\``)
+			.addField('Railway and Github', `\`\`\`asciidoc\n${railwayGithubStats}\`\`\``)
       		.addField('Links', `${links}`)
 			.setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
 			.setTimestamp()
