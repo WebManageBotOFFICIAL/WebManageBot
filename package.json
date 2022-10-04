@@ -5,25 +5,25 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+		"sync": "node deploy-commands.js",
     "lint": "eslint ."
   },
   "keywords": [
     "discord-bot",
     "discordjs",
-    "WebManageBot"
+    "WebManageBot Beta"
   ],
   "author": "VenomousSteam81",
   "license": "ISC",
   "dependencies": {
     "@devraelfreeze/discordjs-antispam": "^3.0.0",
     "@iamtraction/google-translate": "^1.1.2",
-    "@replit/database": "^2.0.2",
     "ascii-table": "0.0.9",
     "axios": "^0.23.0",
     "child_process": "^1.0.2",
     "colors": "1.4.0",
     "common-tags": "^1.8.0",
-    "discord-api-types": "0.33.0",
+    "discord-api-types": "^0.33.0",
     "discord-error-handler": "VenomousSteam81/discord-error-handler-new#beta",
     "discord.js": "14.5.0",
     "discordjs-logger": "^3.0.0",
