@@ -1,4 +1,4 @@
-const { Client, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Partials, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
 const colors = require('colors');
 const fs = require('fs');
 const ee = require('./configs/embed.json');
@@ -19,18 +19,18 @@ const client = new Client({
 		repliedUser: true,
 	},
 	partials: [
-		'MESSAGE',
-		'CHANNEL',
-		'REACTION'
+		'Partials.MESSAGE',
+		'Partials.CHANNEL',
+		'Partials.REACTION'
 	],
 	intents: [
-		'GUILDS',
-		'GUILD_MEMBERS',
-		'GUILD_BANS',
-		'GUILD_EMOJIS_AND_STICKERS',
-		'GUILD_MESSAGE_REACTIONS',
-		'GUILD_MESSAGES',
-		'DIRECT_MESSAGES'
+		'GatewayIntentBits.GUILDS',
+		'GatewayIntentBits.GUILD_MEMBERS',
+		'GatewayIntentBits.GUILD_BANS',
+		'GatewayIntentBits.GUILD_EMOJIS_AND_STICKERS',
+		'GatewayIntentBits.GUILD_MESSAGE_REACTIONS',
+		'GatewayIntentBits.GUILD_MESSAGES',
+		'GatewayIntentBits.DIRECT_MESSAGES'
 	],
 });
 module.exports = client;
