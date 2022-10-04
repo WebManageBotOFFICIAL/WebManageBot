@@ -35,10 +35,10 @@ module.exports = {
           RAM Usage  :: ${ramUsage} MB
        `;
 		const railwayGithubStats = stripIndent`
-		  GIT Branch :: ${process.env.RAILWAY_GIT_BRANCH()}
-		  GIT Owner  :: ${process.env.RAILWAY_GIT_REPO_OWNER()}
-		  GIT Commit :: ${process.env.RAILWAY_GIT_COMMIT_MESSAGE()}
-		  Environment:: ${process.env.RAILWAY_ENVIRONMENT()}
+		  GIT Branch :: ${process.env.RAILWAY_GIT_BRANCH}
+		  GIT Owner  :: ${process.env.RAILWAY_GIT_REPO_OWNER}
+		  GIT Commit :: ${process.env.RAILWAY_GIT_COMMIT_MESSAGE}
+		  Environment:: ${process.env.RAILWAY_ENVIRONMENT}
 	   `;
     	const links = stripIndent`
       	  GitHub     :: [WebManageBot](https://github.com/WebManageBotOFFICIAL/WebManageBot)
