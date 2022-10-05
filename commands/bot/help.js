@@ -22,6 +22,7 @@ module.exports = {
         server: "📝",
 				games: "🎲",
 				test: "🖼️",
+        voice: "🎤",
       };
 
       const catinfo = {
@@ -32,6 +33,7 @@ module.exports = {
         server: "Manage the server",
 				games: "Gaymerland",
 				test: "Testing commands",
+        voice: "Voice Commands",
       };
 
       readdirSync("./commands/").forEach((dir) => {
