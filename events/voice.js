@@ -4,7 +4,7 @@ const { VoiceConnectionStatus, AudioPlayerStatus, joinVoiceChannel  } = require(
 client.on('ready', () => {
 	client.channels.fetch(id) // voice channel's id
 		.then((channel) => { // channel object
-			const VoiceConnection = joinVoiceChannel({
+			const connection = joinVoiceChannel({
 				channelId: channel.id, // the voice channel's id
 				guildId: channel.guild.id, // the guild that the channel is in
 				adapterCreator: channel.guild.voiceAdapterCreator // and setting the voice adapter creator
