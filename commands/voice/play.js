@@ -6,11 +6,14 @@ module.exports = {
 	description: "Join a given VC",
 	aliases: "connect",
 	run: async (client, message, args) => {
-        const connection = joinVoiceChannel({
-            channelId: channel.id,
-            guildId: channel.guild.id,
-            adapterCreator: channel.guild.voiceAdapterCreator,
-        })
+        client.channels.fetch(id) // voice channel's id
+            .then((channel) => { // channel object
+                const VoiceConnection = joinVoiceChannel({
+                    channelId: channel.id, // the voice channel's id
+                    guildId: channel.guild.id, // the guild that the channel is in
+                    adapterCreator: channel.guild.voiceAdapterCreator // and setting the voice adapter creator
+                })
+            })
         const subscription = connection.subscribe(audioPlayer);
         try {
             if (subscription) {

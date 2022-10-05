@@ -1,5 +1,14 @@
 const client = require('..');
-const { VoiceConnectionStatus, AudioPlayerStatus } = require('@discordjs/voice');
+const { VoiceConnectionStatus, AudioPlayerStatus, joinVoiceChannel  } = require('@discordjs/voice');
+
+client.channels.fetch(id) // voice channel's id
+	.then((channel) => { // channel object
+		const VoiceConnection = joinVoiceChannel({
+			channelId: channel.id, // the voice channel's id
+			guildId: channel.guild.id, // the guild that the channel is in
+			adapterCreator: channel.guild.voiceAdapterCreator // and setting the voice adapter creator
+		})
+	})
 
 connection.on(VoiceConnectionStatus.Ready, (oldState, newState) => {
 	console.log('Connection is in the Ready state!');
