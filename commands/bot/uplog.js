@@ -9,17 +9,17 @@ module.exports = {
 	aliases: ["changelog", "update", "uplog", "cl"],
 	run: async (client, message, args) => {
 		const allVerInfo = stripIndent`
-	Current    :: 1.2.1
-	Last       :: 1.2.0
+	Current    :: 1.3.0
+	Last       :: 1.2.1
 	`;
 		const changeLogs = stripIndent`
-	* Changed the commands structure
-* Changed stats command
+	* Decided to update this. Includes:
+		- Login page (not much yet)
+		- Nothing else to mention. Be on the lookout for the next update!
 	`;
 		
 		const embed = new MessageEmbed()
 			.setTitle('**Bot Changelog**')
-			.setDescription('You might ask \`What does the x.x.x mean?\` Well, here it is! \n major ver.minor ver.sml features ver')
 			.addField('All Version Info', `\`\`\`asciidoc\n${allVerInfo}\`\`\``)
 			.addField('Main Changelogs', `\`\`\`asciidoc\n${changeLogs}\`\`\``)
 			.setTimestamp()

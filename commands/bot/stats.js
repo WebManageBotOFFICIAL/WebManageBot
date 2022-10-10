@@ -34,7 +34,7 @@ module.exports = {
           RAM        :: ${totalMemMb} MB
           RAM Usage  :: ${ramUsage} MB
        `;
-		const railwayGithubStats = stripIndent`
+		const debugInfo = stripIndent`
 		  GIT Branch :: ${process.env.RAILWAY_GIT_BRANCH}
 		  GIT Owner  :: ${process.env.RAILWAY_GIT_REPO_OWNER}
 		  GIT Commit :: ${process.env.RAILWAY_GIT_COMMIT_MESSAGE}
@@ -51,7 +51,7 @@ module.exports = {
 			.addField('Main', `\`\`\`asciidoc\n${mainStats}\`\`\``)
 			.addField('Client', `\`\`\`asciidoc\n${clientStats}\`\`\``)
 			.addField('Server', `\`\`\`asciidoc\n${serverStats}\`\`\``)
-			.addField('Railway and Github', `\`\`\`asciidoc\n${railwayGithubStats}\`\`\``)
+			.addField('Debug Info', `\`\`\`asciidoc\n${debugInfo}\`\`\``)
       		.addField('Links', `${links}`)
 			.setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
 			.setTimestamp()
