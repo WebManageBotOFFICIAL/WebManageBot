@@ -12,6 +12,7 @@ client.on("messageCreate", async (message) => {
 	if (message.author.bot) return;
 	if (message.channel.partial) await message.channel.fetch();
 	if (message.partial) await message.fetch();
+	//if (blockedUsers.includes(message.user.id)) return message.reply(`You were blocked for reason`);
 	const prefixRegex = new RegExp(
 		`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`
 	);

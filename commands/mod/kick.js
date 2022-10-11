@@ -27,7 +27,7 @@ module.exports = {
 		}
 
 		let reason = args.slice(1).join(" ");
-		if (!reason) reason = "-";
+		if (!reason) reason = "Was kicked. Possibly a bad user?";
 
 		const embed = new MessageEmbed()
 			.setTitle("KICK MEMBER")
