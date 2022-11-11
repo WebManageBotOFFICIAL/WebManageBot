@@ -1,10 +1,11 @@
 const { Client, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
+require('dotenv').config()
 const colors = require('colors');
 const fs = require('fs');
 const ee = require('./configs/embed.json');
 const winston = require('winston');
 const config = require('./configs/config.json');
-const Keyv = require('keyv');
+//const Keyv = require('keyv');
 //const keyv = new Keyv(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`, { collection: 'userBans' });
 const defaultPrefix = config.defaultPrefix;
 
@@ -72,9 +73,6 @@ client.categories = fs.readdirSync('./commands/');
 
 client.login(process.env.token);
 
-keyv.on('error', (err) => {
-	console.error('Keyv connection error:', err)
-})
 process.on("unhandledRejection", (reason, p) => {
 	console.log(reason, p),
 	handle.createrr(client, undefined, undefined, reason, p)

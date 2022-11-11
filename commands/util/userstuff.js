@@ -1,6 +1,6 @@
 const { Client, Message, MessageEmbed, Collection, Intents } = require("discord.js");
 const Keyv = require('keyv');
-const keyv = new Keyv(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`, { collection: 'userBans' });
+//const keyv = new Keyv(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`, { collection: 'userBans' });
 
 module.exports = {
 	name: "userBan",
@@ -18,9 +18,11 @@ module.exports = {
 		if (!reason) return message.reply('Please provide a reason');
 
 		try {
+			/*
 			(async () => {
 				await keyv.set(userID, reason);
 			})(),
+			*/
 		message.reply(`Banned user ${userID} for reason ${reason}`)
 		} catch (error) {
 			console.log(error);
