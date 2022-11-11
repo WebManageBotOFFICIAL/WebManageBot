@@ -1,5 +1,11 @@
 const fs = require("fs");
-const { Client, Message, MessageEmbed, Collection, Intents } = require("discord.js");
+const {
+	Client,
+	Message,
+	MessageEmbed,
+	Collection,
+	Intents
+} = require("discord.js");
 
 module.exports = {
 	name: 'reload',

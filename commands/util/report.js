@@ -1,4 +1,9 @@
-const { Client, Message, MessageEmbed, Formatters } = require("discord.js");
+const {
+	Client,
+	Message,
+	MessageEmbed,
+	Formatters
+} = require("discord.js");
 const Errorhandler = require('discord-error-handler');
 
 module.exports = {

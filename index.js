@@ -5,7 +5,7 @@ const ee = require('./configs/embed.json');
 const winston = require('winston');
 const config = require('./configs/config.json');
 const Keyv = require('keyv');
-const keyv = new Keyv(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`, { collection: 'userBans' });
+//const keyv = new Keyv(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`, { collection: 'userBans' });
 const defaultPrefix = config.defaultPrefix;
 
 const client = new Client({
