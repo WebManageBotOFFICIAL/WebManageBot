@@ -1,6 +1,6 @@
-const client = require("..")
+const client = require("../..")
 const AntiSpam = require("@devraelfreeze/discordjs-antispam");
-const AntiSpamConfig = require('../configs/asconfig.json');
+const AntiSpamConfig = require('../../configs/asconfig.json');
 
 const antiSpam = new AntiSpam(client, {
 	antispamFilter: {

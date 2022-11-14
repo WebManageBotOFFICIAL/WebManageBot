@@ -14,6 +14,7 @@ module.exports = {
 		if(!command) return message.reply('There were no commands given!');
 		child.exec(command, (err, res) => {
 			if(err) return console.log(err);
+			if(err) return message.reply(`An error occured: \n ${error}`);
 			message.channel.send(res.slice(0, 2000), { code: 'js'});
 		});
 	},

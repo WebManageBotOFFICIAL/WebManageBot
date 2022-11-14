@@ -1,4 +1,4 @@
-const client = require('..')
+const client = require('../..')
 const express = require('express');
 const app = express();
 const port = 3001;

@@ -54,9 +54,6 @@ const handle = new Errorhandler(client, {
 client.on('debug', m => logger.log('debug', m));
 client.on('warn', m => logger.log('warn', m));
 client.on('error', m => logger.log('error', m));
-process.on('uncaughtException', error => {
-	logger.log('error', error);
-});
 
 logger.exitOnError = false;
 
@@ -74,14 +71,17 @@ client.categories = fs.readdirSync('./commands/');
 client.login(process.env.token);
 
 process.on("unhandledRejection", (reason, p) => {
+	logger.log('error', 'unhandledRejection error', reason, p),
 	console.log(reason, p),
 	handle.createrr(client, undefined, undefined, reason, p)
 })
 process.on("uncaughtException", (err, origin) => {
+	logger.log('error', 'uncaughtException error', err, origin),
 	console.log(err, origin),
 	handle.createrr(client, undefined, undefined, err, origin)
 })
 process.on("multipleResolves", (type, promise, reason) => {
+	logger.log('error', 'multipleResolves error', type, promise, reason),
 	console.log(type, promise, reason),
 	handle.createrr(client, undefined, undefined, type, promise, reason)
 })

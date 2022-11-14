@@ -1,6 +1,6 @@
-const client = require("..");
+const client = require("../..");
 const { Message, MessageEmbed, Collection } = require('discord.js');
-const idConfig = require('../configs/idconfig.json');
+const idConfig = require('../../configs/idconfig.json');
 
 // Channel Topic Updating 
 client.on("guildChannelTopicUpdate", async (channel, oldTopic, newTopic) => {
