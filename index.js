@@ -7,7 +7,7 @@ const winston = require('winston');
 const config = require('./configs/config.json');
 //const Keyv = require('keyv');
 //const keyv = new Keyv(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`, { collection: 'userBans' });
-const defaultPrefix = config.defaultPrefix;
+const defaultPrefix = process.env.defaultPrefix;
 
 const client = new Client({
 	messageCacheLifetime: 60,

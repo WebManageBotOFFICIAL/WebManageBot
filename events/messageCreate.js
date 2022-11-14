@@ -2,7 +2,7 @@ const { Message, MessageEmbed, Collection } = require('..');
 const config = require("../configs/config.json");
 var ee = require("../configs/embed.json");
 const client = require("..");
-const prefix = config.defaultPrefix
+const prefix = process.env.defaultPrefix
 
 client.on("messageCreate", async (message) => {
 	const { escapeRegex, onCoolDown } = require("../utils/function.js");

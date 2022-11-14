@@ -17,7 +17,7 @@ module.exports = {
 		const mainStats = stripIndent`
 	  	  Owner      :: VenomousSteam81
 	  	  Host       :: [Railway-Hosting](https://railway.app/)
-	  	  Prefix     :: ${config.defaultPrefix}
+	  	  Prefix     :: ${process.env.defaultPrefix}
 	   `;
 		const clientStats = stripIndent`
           Servers    :: ${message.client.guilds.cache.size}
