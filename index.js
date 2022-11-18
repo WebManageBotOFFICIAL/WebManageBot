@@ -1,12 +1,12 @@
 const { Client, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
-require('dotenv').config()
+require('dotenv').config();
 const colors = require('colors');
 const fs = require('fs');
 const ee = require('./configs/embed.json');
 const winston = require('winston');
 const config = require('./configs/config.json');
-//const Keyv = require('keyv');
-//const keyv = new Keyv(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`, { collection: 'userBans' });
+// const Keyv = require('keyv');
+// const keyv = new Keyv(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`, { collection: 'userBans' });
 const defaultPrefix = process.env.defaultPrefix;
 
 const client = new Client({
@@ -24,7 +24,7 @@ const client = new Client({
 	partials: [
 		'MESSAGE',
 		'CHANNEL',
-		'REACTION'
+		'REACTION',
 	],
 	intents: [
 		'GUILDS',
@@ -33,7 +33,7 @@ const client = new Client({
 		'GUILD_EMOJIS_AND_STICKERS',
 		'GUILD_MESSAGE_REACTIONS',
 		'GUILD_MESSAGES',
-		'DIRECT_MESSAGES'
+		'DIRECT_MESSAGES',
 	],
 });
 module.exports = client;
@@ -73,15 +73,15 @@ client.login(process.env.token);
 process.on("unhandledRejection", (reason, p) => {
 	logger.log('error', 'unhandledRejection error', reason, p),
 	console.log(reason, p),
-	handle.createrr(client, undefined, undefined, reason, p)
-})
+	handle.createrr(client, undefined, undefined, reason, p);
+});
 process.on("uncaughtException", (err, origin) => {
 	logger.log('error', 'uncaughtException error', err, origin),
 	console.log(err, origin),
-	handle.createrr(client, undefined, undefined, err, origin)
-})
+	handle.createrr(client, undefined, undefined, err, origin);
+});
 process.on("multipleResolves", (type, promise, reason) => {
 	logger.log('error', 'multipleResolves error', type, promise, reason),
 	console.log(type, promise, reason),
-	handle.createrr(client, undefined, undefined, type, promise, reason)
-})
+	handle.createrr(client, undefined, undefined, type, promise, reason);
+});

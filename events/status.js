@@ -1,5 +1,5 @@
 const client = require('..');
-//const config = require('../configs/config.json');
+// const config = require('../configs/config.json');
 
 const activities = [
 	"for the w+help command",
@@ -22,7 +22,7 @@ const activities = [
 	"for mentions",
 	"javascript",
 	"the air",
-	"all the errors"
+	"all the errors",
 ];
 
 client.on("ready", () => {
@@ -30,6 +30,6 @@ client.on("ready", () => {
     const randomIndex = Math.floor(Math.random() * (activities.length - 1) + 1);
     const newActivity = activities[randomIndex];
 
-    client.user.setActivity(newActivity, { type: 'WATCHING'});
+    client.user.setActivity(newActivity, { type: 'WATCHING' });
   }, 5000);
 });

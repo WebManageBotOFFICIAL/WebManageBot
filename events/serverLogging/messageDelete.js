@@ -1,7 +1,7 @@
 const client = require('../..');
-const idConfig = require('../../configs/idconfig.json');
+const idConfig = require('../../configs/idConfig.json');
 
-client.on('messageDelete', async (client, message) => {
+client.on('messageDelete', async (message) => {
     // Ignore direct messages
 	if (!message.guild) return;
 	const fetchedLogs = await message.guild.fetchAuditLogs({
@@ -12,7 +12,7 @@ client.on('messageDelete', async (client, message) => {
 	const deletionLog = fetchedLogs.entries.first();
 
 	// Perform a coherence check to make sure that there's *something*
-	const channelName = idconfig.logOldChannelName;
+	const channelName = idConfig.logOldChannelName;
 	const LogChannel = message.guild.channels.cache.find(ch => ch.name(channelName));
 	if (!deletionLog) return LogChannel.send(`A message by ${message.author.tag} was deleted, but no relevant audit logs were found.`);
 

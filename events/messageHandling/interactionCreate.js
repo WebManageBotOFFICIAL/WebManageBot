@@ -4,11 +4,10 @@ client.on("interactionCreate", async (interaction) => {
     if (!interaction.isButton()) return;
     if (!interaction.isSelectMenu()) return;
     if (interaction.isCommand()) {
-        await interaction.deferReply({ ephemeral: false }).catch(() => {});
+        await interaction.deferReply({ ephemeral: false }).catch((error) => {console.log(error);});
 
         const cmd = client.slashCommands.get(interaction.commandName);
-        if (!cmd)
-            return interaction.followUp({ content: "An error has occured" });
+        if (!cmd) return interaction.followUp({ content: "An error has occured" });
 
         const args = [];
 

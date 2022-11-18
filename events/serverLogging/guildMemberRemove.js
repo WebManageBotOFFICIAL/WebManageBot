@@ -1,7 +1,7 @@
 const client = require('../..');
-const idConfig = require('../../configs/idconfig.json');
+const idConfig = require('../../configs/idConfig.json');
 
-client.on('guildMemberRemove', async (client, message, member) => {
+client.on('guildMemberRemove', async (message, member) => {
 	const fetchedLogs = await member.guild.fetchAuditLogs({
 		limit: 1,
 		type: 'MEMBER_KICK',
@@ -10,7 +10,7 @@ client.on('guildMemberRemove', async (client, message, member) => {
 	const kickLog = fetchedLogs.entries.first();
 
 	// Perform a coherence check to make sure that there's *something*
-	const channelName = idconfig.logOldChannelName;
+	const channelName = idConfig.logOldChannelName;
 	const LogChannel = message.guild.channels.cache.find(ch => ch.name(channelName));
 	if (!kickLog) return LogChannel.send(`${member.user.tag} left the guild, most likely of their own will.`);
 
@@ -25,6 +25,6 @@ client.on('guildMemberRemove', async (client, message, member) => {
 		LogChannel.send(`${member.user.tag} left the guild; kicked by ${executor.tag}?`);
 	} else {
 		console.log(`${member.user.tag} left the guild, audit log fetch was inconclusive.`),
-		LogChannel.send(`${member.user.tag} left the guild, audit log fetch was inconclusive.`)
+		LogChannel.send(`${member.user.tag} left the guild, audit log fetch was inconclusive.`);
 	}
 });
