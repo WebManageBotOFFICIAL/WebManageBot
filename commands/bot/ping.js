@@ -9,8 +9,8 @@ module.exports = {
             .setDescription('__Latencies:__')
             .addField(`Reply`, `${Date.now() - message.createdTimestamp}ms`)
             .addField(`Websocket`, `${Math.round(client.ws.ping)}ms`)
-            .setTimestamp()
-        
-        message.reply({ embeds: [ping] })
-    }
-}
+            .setTimestamp();
+
+        message.reply({ embeds: [ping] });
+    },
+};

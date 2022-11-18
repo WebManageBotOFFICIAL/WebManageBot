@@ -1,6 +1,5 @@
 const { MessageEmbed, Message, Client } = require("discord.js");
 const config = require('../../configs/config.json');
-const { stripIndent } = require('common-tags');
 const rTips = require('../../configs/tips.json'); // new feature to come soon
 
 module.exports = {
@@ -8,20 +7,9 @@ module.exports = {
 	description: "Shows my latest changelog",
 	aliases: ["changelog", "update", "uplog", "cl"],
 	run: async (client, message, args) => {
-		const allVerInfo = stripIndent`
-	Current    :: 1.3.0
-	Last       :: 1.2.1
-	`;
-		const changeLogs = stripIndent`
-	* Decided to update this. Includes:
-		- Login page (not much yet)
-		- Nothing else to mention. Be on the lookout for the next update!
-	`;
-		
 		const embed = new MessageEmbed()
 			.setTitle('**Bot Changelog**')
-			.addField('All Version Info', `\`\`\`asciidoc\n${allVerInfo}\`\`\``)
-			.addField('Main Changelogs', `\`\`\`asciidoc\n${changeLogs}\`\`\``)
+			.setDescription('(View the changelog here)[https://github.com/WebManageBotOFFICIAL/WebManageBot/blob/aee20936d1f6f698b40a473dcd2bec177228a932/UPDATES.md]')
 			.setTimestamp()
 			.setColor(message.guild.me.displayHexColor);
 		message.channel.send({ embeds: [embed] });

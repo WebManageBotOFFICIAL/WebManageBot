@@ -1,8 +1,16 @@
 function ball() {
-  	var rand = ['Yes', 'No', 'Why are you even trying?', 'What do you think? NO', 'Maybe', 'Never', 'Yep', 'What\'s the point?'
-		];
-  return rand[Math.floor(Math.random()*rand.length)];
-};
+	let rand = [
+		'Yes',
+		'No',
+		'Why are you even trying?',
+		'What do you think? NO',
+		'Maybe',
+		'Never',
+		'Yep',
+		'What\'s the point?',
+	];
+  return rand[Math.floor(Math.random() * rand.length)];
+}
 
 module.exports = {
 	name: "8ball",

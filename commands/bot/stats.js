@@ -7,7 +7,7 @@ const config = require('../../configs/config.json');
 module.exports = {
 	name: "stats",
 	aliases: [ "botinfo", "status", "debug", "deb" ],
-	description: 'Show my \`status\`',
+	description: 'Show my `status`',
 	run: async (client, message, args, prefix) => {
 		let ramUsage = process.memoryUsage().heapUsed / 1024;
 		const d = moment.duration(message.client.uptime);
@@ -40,7 +40,7 @@ module.exports = {
 		  GIT Commit :: ${process.env.RAILWAY_GIT_COMMIT_MESSAGE}
 		  Environment:: ${process.env.RAILWAY_ENVIRONMENT}
 	   `;
-    	const links = stripIndent`
+		const links = stripIndent`
       	  GitHub     :: [WebManageBot](https://github.com/WebManageBotOFFICIAL/WebManageBot)
     	`;
 
@@ -52,7 +52,7 @@ module.exports = {
 			.addField('Client', `\`\`\`asciidoc\n${clientStats}\`\`\``)
 			.addField('Server', `\`\`\`asciidoc\n${serverStats}\`\`\``)
 			.addField('Debug Info', `\`\`\`asciidoc\n${debugInfo}\`\`\``)
-      		.addField('Links', `${links}`)
+			.addField('Links', `${links}`)
 			.setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
 			.setTimestamp()
 			.setColor(message.guild.me.displayHexColor);

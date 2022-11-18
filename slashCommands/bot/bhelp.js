@@ -17,7 +17,7 @@ module.exports = {
 				mod: "👁",
         server: "📝",
 				games: "🎲",
-				test: "🖼️"
+				test: "🖼️",
       };
 
       const catinfo = {
@@ -26,7 +26,7 @@ module.exports = {
 				mod: "Punish those baddies from existence",
         server: "Manage this server",
 				games: "Gaymerland",
-				test: "Testing or \"beta\" commands"
+				test: "Testing or \"beta\" commands",
       };
 
         const hb = [
@@ -49,7 +49,7 @@ module.exports = {
                         type: 2,
                         style: 'PRIMARY',
                         custom_id: 'info',
-                        label: 'INFO'
+                        label: 'INFO',
                     },
                     {
                         type: 2,
@@ -63,8 +63,8 @@ module.exports = {
                         custom_id: 'test',
                         label: 'TEST',
                     },
-                ]
-            }
+                ],
+            },
         ];
 
       readdirSync("./commands/").forEach((dir) => {
@@ -88,46 +88,46 @@ module.exports = {
             `Requested by ${message.author.tag}`,
             message.author.displayAvatarURL({
               dynamic: true,
-            })
+            }),
           )
           .setTimestamp()
           .setThumbnail(
             client.user.displayAvatarURL({
               dynamic: true,
-            })
+            }),
           );
-        
+
         const msg = await message.channel.send({
             content: help,
             embeds: [help],
             components: hb,
-        })
+        });
 
-      if(button.customId == button.customId) {
+      if (button.customId == button.customId) {
         readdirSync("./commands/").forEach((dir) => {
           const commands = readdirSync(`./commands/${dir}/`).filter((file) =>
-            file.endsWith(".js")
+            file.endsWith(".js"),
           );
           const cmds = commands.map((command) => {
             let file = require(`../../commands/${dir}/${command}`);
-  
+
             if (!file.name) return "No command name.";
-  
+
             let name = file.name.replace(".js", "");
-  
+
             let des = `${client.commands.get(name).description}`;
             let emo = `✅`;
-  
+
             let obj = {
               cname: `${emo} \`${name}\``,
               des,
             };
-  
+
             return obj;
           });
-  
+
           let dota = new Object();
-  
+
           cmds.map((co) => {
             dota = {
               name: `${cmds.length === 0 ? "In progress" : co.cname}`,
@@ -136,29 +136,29 @@ module.exports = {
             };
             catts.push(dota);
           });
-  
+
           cots.push(dir.toLowerCase());
-        })       
+        });
         const combed = new MessageEmbed()
         .setTitle(
           `__${
             button.customId.toUpperCase() + button.customId.slice(1)
-          } Commands!__`
+          } Commands!__`,
         )
         .setDescription(
-          `Use \`${config.prefix}help\` followed by a command name to get more information on a command.\nFor example: \`${config.prefix}help ping\`\n\n`
+          `Use \`${config.prefix}help\` followed by a command name to get more information on a command.\nFor example: \`${config.prefix}help ping\`\n\n`,
         )
-        .addFields(catts)
+        .addFields(catts);
 
         } try {
           msg.edit({
             content: catts,
             embeds: [combed],
             components: hb,
-          })
+          });
         } catch (error) {
           console.log(error),
           message.reply(error);
-        };
-    }
-}
+        }
+    },
+};
