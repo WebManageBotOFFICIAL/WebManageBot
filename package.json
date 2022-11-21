@@ -1,6 +1,6 @@
 {
   "name": "webmanagebot",
-  "version": "3.0.0",
+  "version": "1.2.1",
   "description": "another discordjs bot",
   "main": "index.js",
   "scripts": {
