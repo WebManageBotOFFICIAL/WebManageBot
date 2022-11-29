@@ -14,8 +14,8 @@ module.exports = {
       .setDescription(
         `[Avatar Link](${user.displayAvatarURL({
           size: 2048,
-          dynamic: true
-        })})`
+          dynamic: true,
+        })})`,
       )
       .setImage(user.avatarURL({ size: 2048, dynamic: true, format: "png" }));
 

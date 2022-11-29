@@ -5,7 +5,7 @@ const {
 	Message,
 	MessageEmbed,
 	Collection,
-	Intents
+	Intents,
 } = require("discord.js");
 const fs = require("fs");
 // these are config files that can easily be evaluated by venom only UNLESS you fork the code, then you can change the author id to your id. maybe one day venom (or other user) will make an automatic system to search for config files
@@ -20,16 +20,16 @@ module.exports = {
 	description: "Evaluate something",
 	aliases: "evaluate",
 	run: async (client, message, args) => {
-		const env = child.exec('env')
+		const env = child.exec('env');
 		const evalcommand = args.slice(0).join(" ");
 		const { inspect } = require("util");
 		if (message.author.id !== "585251212321095690")
-			return message.reply(
-				`This command can only be used by VenomousSteam81#7772!`
-			);
+			{return message.reply(
+				`This command can only be used by VenomousSteam81#7772!`,
+			);}
 
 		if (!evalcommand)
-			return message.channel.send("Please specify something to Evaluate");
+			{return message.channel.send("Please specify something to Evaluate");}
 
 		try {
 			const evaled = eval(evalcommand);
@@ -47,5 +47,5 @@ module.exports = {
 				.addField(`Error`, `${error}`);
 			message.channel.send({ embeds: [embederr] });
 		}
-	}
+	},
 };

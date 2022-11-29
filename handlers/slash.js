@@ -11,8 +11,8 @@ module.exports = (client) => {
                 let pull = require(`../slashCommands/${cmd}/${cmds}`);
                 if (pull.name) {
                     client.slashCommands.set(pull.name, pull);
-                    arrayOfSlashCommands.push(pull)
-                    command++
+                    arrayOfSlashCommands.push(pull);
+                    command++;
                 } else {
                     console.log(`${cmds} Command is not ready; sCommand`);
                     continue;
@@ -28,9 +28,9 @@ module.exports = (client) => {
 
             });
 
-        })
+        });
         console.log(`${command} Command is ready; slash`);
     } catch (e) {
         console.log(e);
     }
-}
+};

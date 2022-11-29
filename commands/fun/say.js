@@ -4,12 +4,12 @@ module.exports = {
 	usage: "text",
 		run: async (client, message, args) => {
 			const command = args.join(" ");
-			if(!command) return message.reply('There were no commands given!');
+			if (!command) return message.reply('There were no commands given!');
     try {
 			message.channel.send(command);
 		} catch (error) {
 			console.error(error);
 			message.channel.send(error);
-		};
+		}
   },
 };

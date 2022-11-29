@@ -36,7 +36,7 @@ module.exports = {
         .join(" ")
         .split("")
         .map((c) => mapping[c] || c)
-        .join("")
+        .join(""),
     );
   },
 };

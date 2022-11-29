@@ -1,4 +1,4 @@
-const discord = require('discord.js')
+const discord = require('discord.js');
 module.exports = {
 	name: "purge",
 	aliases: "clear",
@@ -13,11 +13,11 @@ module.exports = {
 
 		if (isNaN(amount)) {
 			return message.channel.send(
-				`${message.author.username}, you can only clear messages from 1-99`
+				`${message.author.username}, you can only clear messages from 1-99`,
 			);
 		} else if (amount <= 1 || amount > 100) {
 			return message.channel.send(
-				`${message.author.username}, you can only clear messages from 1-99`
+				`${message.author.username}, you can only clear messages from 1-99`,
 			);
 		}
 

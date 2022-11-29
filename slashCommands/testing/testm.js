@@ -6,8 +6,8 @@ module.exports = {
     run: async (client, interaction, args) => {
         const e = new MessageEmbed()
             .setTitle('test w/buttons')
-            .setDescription('test w/buttons')
-        
+            .setDescription('test w/buttons');
+
         const r = new MessageActionRow()
         .addComponents(
             new MessageSelectMenu()
@@ -26,6 +26,6 @@ module.exports = {
                     },
                 ]),
             );
-        await interaction.reply({ content: 'm', embeds: [e], components: [r] })
-    }
-}
+        await interaction.reply({ content: 'm', embeds: [e], components: [r] });
+    },
+};

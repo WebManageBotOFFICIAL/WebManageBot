@@ -17,7 +17,7 @@ client.on("interactionCreate", async (interaction) => {
                 option.options?.forEach((x) => {
                     if (x.value) args.push(x.value);
                 });
-            } else if (option.value) args.push(option.value);
+            } else if (option.value) {args.push(option.value);}
         }
         interaction.member = interaction.guild.members.cache.get(interaction.user.id);
 

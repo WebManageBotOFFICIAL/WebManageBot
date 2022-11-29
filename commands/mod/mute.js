@@ -23,7 +23,7 @@ module.exports = {
 			return message.channel.send(" \``` Please give a  reason for muting the mentioned member\``` ");
 		}
 
-		const vrole = user.roles.cache
+		const vrole = user.roles.cache;
 
 		let muterole = message.guild.roles.cache.find(x => x.name === "JAILED");
 
@@ -35,10 +35,10 @@ module.exports = {
 		await user.roles.add(muterole);
 
 		await message.channel.send(
-			`You muted ${message.mentions.users.first().username} for ${reason}`
+			`You muted ${message.mentions.users.first().username} for ${reason}`,
 		);
 
-		user.send(`You got muted in ${message.guild} for ${reason}`
+		user.send(`You got muted in ${message.guild} for ${reason}`,
 		);
-	}
+	},
 };

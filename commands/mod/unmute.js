@@ -20,12 +20,12 @@ module.exports = {
 			return message.channel.send("The given user does not have the muted role");
 		}
 
-		user.roles.remove(muterole)
+		user.roles.remove(muterole);
 
 		await message.channel.send(`**${message.mentions.users.first().username}** is now unmuted`);
 
 		user.send(`You are now unmuted from **${message.guild.name}**`);
 
-		message.delete()
-	}
+		message.delete();
+	},
 };

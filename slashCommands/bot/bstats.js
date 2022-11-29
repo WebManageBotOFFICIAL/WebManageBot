@@ -48,7 +48,7 @@ module.exports = {
 			.addField('Server', `\`\`\`asciidoc\n${serverStats}\`\`\``)
 			.addField('Extra stuff', `\`\`\`asciidoc\n${extraStats}\`\`\``)
 			.setFooter('this is a footer')
-			.setTimestamp()
+			.setTimestamp();
 		await interaction.reply({ content: 'my status', embeds: [embed] });
 	},
 };

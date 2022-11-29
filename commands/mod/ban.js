@@ -15,13 +15,13 @@ module.exports = {
 
     if (!target) {
       return message.channel.send(
-        `**${message.author.username}**, Please mention the person who you want to ban.`
+        `**${message.author.username}**, Please mention the person who you want to ban.`,
       );
     }
 
     if (target.id === message.author.id) {
       return message.channel.send(
-        `**${message.author.username}**, You can not ban yourself!`
+        `**${message.author.username}**, You can not ban yourself!`,
       );
     }
     if (target.id === message.guild.ownerId) {

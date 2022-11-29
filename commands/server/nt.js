@@ -14,8 +14,8 @@ module.exports = {
           .setTitle('Nickname changed!')
           .addField('Original', `${user}`)
           .addField('New', `${nNick}`)
-          .setFooter('Someone\'s name was changed...')
-    
+          .setFooter('Someone\'s name was changed...');
+
       message.reply({ embeds: [nick] });
-    }
-}
+    },
+};

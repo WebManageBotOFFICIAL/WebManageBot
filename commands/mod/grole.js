@@ -3,28 +3,28 @@ module.exports = {
 	description: 'give a role to a user',
 	permissions: 'ADMINISTRATOR',
 	callback: (message, args) => {
-		const targetUser = message.mentions.users.first()
+		const targetUser = message.mentions.users.first();
 		if (!targetUser) {
-			message.reply('Please specify someone to give a role to.')
-			return
+			message.reply('Please specify someone to give a role to.');
+			return;
 		}
 
-		arguments.shift()
+		arguments.shift();
 
-		const roleName = arguments.join(' ')
-		const { guild } = message
+		const roleName = arguments.join(' ');
+		const { guild } = message;
 
 		const role = guild.roles.cache.find((role) => {
-			return role.name === roleName
-		})
+			return role.name === roleName;
+		});
 		if (!role) {
-			message.reply(`There is no role with the name "${roleName}"`)
-			return
+			message.reply(`There is no role with the name "${roleName}"`);
+			return;
 		}
 
-		const member = guild.members.cache.get(targetUser.id)
-		member.roles.add(role)
+		const member = guild.members.cache.get(targetUser.id);
+		member.roles.add(role);
 
-		message.reply(`that user now has the "${roleName}" role`)
+		message.reply(`that user now has the "${roleName}" role`);
 	},
-}
+};

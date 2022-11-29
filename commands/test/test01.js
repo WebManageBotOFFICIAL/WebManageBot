@@ -54,7 +54,7 @@ module.exports = {
 			});
 		}
 		setInterval(() => {
-			if(gameEnded == false) return update();
+			if (gameEnded == false) return update();
 		}, 2000);
 
 		const filter = button => {
@@ -62,7 +62,7 @@ module.exports = {
 		};
 		const button = await msg.awaitMessageComponent({ filter: filter, componentType: 'BUTTON', max: 1 });
 
-		if(button.customId !== Object.keys(positions)[randomized]) {
+		if (button.customId !== Object.keys(positions)[randomized]) {
 			gameEnded = true;
 			return button.reply({ content: `${assets.others.approve} | YOU WON!` });
 		}

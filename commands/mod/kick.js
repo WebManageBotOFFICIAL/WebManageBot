@@ -14,7 +14,7 @@ module.exports = {
 
 		if (!target) {
 			return message.channel.send(
-				`**${message.author.username}**, Please mention the person who you want to kick`
+				`**${message.author.username}**, Please mention the person who you want to kick`,
 			);
 		}
 		if (target.id === message.guild.ownerId) {
@@ -22,7 +22,7 @@ module.exports = {
 		}
 		if (target.id === message.author.id) {
 			return message.channel.send(
-				`**${message.author.username}**, You can not kick yourself`
+				`**${message.author.username}**, You can not kick yourself`,
 			);
 		}
 
@@ -34,7 +34,7 @@ module.exports = {
 			.setColor("RANDOM")
 			.setThumbnail(target.user.displayAvatarURL)
 			.setDescription(
-				`Action : Kick \nReason: ${reason} \nUser: ${target} \nModerator: ${message.member}`
+				`Action : Kick \nReason: ${reason} \nUser: ${target} \nModerator: ${message.member}`,
 			)
 			.setTimestamp();
 

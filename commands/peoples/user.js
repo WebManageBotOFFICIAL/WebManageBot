@@ -33,7 +33,7 @@ module.exports = {
       .slice(0, -1);
     const userFlags = member.user.flags.toArray();
     if (!member.user.activities) member.user.activities = { name: `${emojis.wrong} - None` };
-    
+
     const embed = new Discord.MessageEmbed()
       .setAuthor(`Info about ${member.user.tag}`, member.user.displayAvatarURL({ dynamic: true }))
       .setDescription(`Here is some info about the user!`)
@@ -41,47 +41,47 @@ module.exports = {
           {
             name: 'Username',
             value: member.user.username,
-            inline: true
+            inline: true,
         }, {
             name: 'Discriminator',
             value: member.user.discriminator,
-            inline: true
+            inline: true,
         }, {
             name: 'ID',
             value: member.user.id,
-            inline: true          
+            inline: true,
         }, {
             name: 'Badges',
-            value: userFlags.length ? userFlags.map((flag) => flags[flag]).join(", "): "None",
-            inline: true            
+            value: userFlags.length ? userFlags.map((flag) => flags[flag]).join(", ") : "None",
+            inline: true,
         }, {
             name: 'Avatar',
-            value: `[Link](${member.user.displayAvatarURL({dynamic:true})})`,
-            inline: true 
+            value: `[Link](${member.user.displayAvatarURL({ dynamic:true })})`,
+            inline: true,
        }, {
             name: 'Time Created',
             value: `${moment(member.user.createdTimestamp).format("LT")} ${moment(member.user.createdTimestamp).format("LL")} ${moment(member.user.createdTimestamp).fromNow()}`,
-            inline: true           
+            inline: true,
        }, {
            name: `Nickname`,
            value: member.nickname || "None",
-           inline: true   
+           inline: true,
        }, {
            name: `Roles`,
            value: roles.length ? roles.join(", ") : "None",
-           inline: true
+           inline: true,
        }, {
 				  name: `Stats`,
 					value: `${message.author.user.presence.status}`,
-					inline: true
-			 }
-        
+					inline: true,
+			 },
+
     )
           .setFooter(
         `Requested by ${message.author.username}`,
-        `${message.author.displayAvatarURL({ dynamic: true })}`
+        `${message.author.displayAvatarURL({ dynamic: true })}`,
     )
-    .setColor(colors.defaultColor)
-    return message.channel.send({embeds: [embed]});
-  }
-}
+    .setColor(colors.defaultColor);
+    return message.channel.send({ embeds: [embed] });
+  },
+};

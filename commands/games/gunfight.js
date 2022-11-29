@@ -80,14 +80,14 @@ module.exports = {
 		componentsArray[0].components[0].disabled = true;
 		componentsArray[0].components[2].disabled = true;
 
-		if(button.customId === 'shoot1' && button.user.id == message.author.id) {
+		if (button.customId === 'shoot1' && button.user.id == message.author.id) {
 			msg.edit({
 				content: positions.ended1,
 				components: componentsArray,
 			});
 			return button.reply({ content: `<@${message.author.id}> won!` });
 		}
-		else if(button.customId === 'shoot2' && button.user.id == opponent.id) {
+		else if (button.customId === 'shoot2' && button.user.id == opponent.id) {
 			msg.edit({
 				content: positions.ended1,
 				components: componentsArray,

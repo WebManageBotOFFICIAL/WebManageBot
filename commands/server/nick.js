@@ -19,6 +19,6 @@ module.exports = {
         content: 'Nick',
 
     })*/
-        message.reply('This command is in staging; This command is also a placehoder for the `server` category!')
-    }
-}
+        message.reply('This command is in staging; This command is also a placehoder for the `server` category!');
+    },
+};

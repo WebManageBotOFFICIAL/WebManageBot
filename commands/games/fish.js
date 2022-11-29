@@ -58,7 +58,7 @@ module.exports = {
 			randomized = Math.floor(Math.random() * 2);
 			randomPos = positions[Object.keys(positions)[randomized]];
 
-			if(data === 3) {
+			if (data === 3) {
 				gameEnded = true;
 				game.stop();
 				componentsArray[0].components[1].disabled = true;
@@ -81,7 +81,7 @@ module.exports = {
 				button.reply({ content: 'GG You lost XD' });
 			}
 			else {
-				if(button) return button.deferUpdate();
+				if (button) return button.deferUpdate();
 				msg.edit({
 					content: randomPos + `           **${data}**`,
 					components: componentsArray,
@@ -90,11 +90,11 @@ module.exports = {
 		}
 
 		setInterval(() => {
-			if(gameEnded === false) return update();
+			if (gameEnded === false) return update();
 		}, 2000);
 
 		game.on('collect', async (button) => {
-			if(randomized !== 0) {
+			if (randomized !== 0) {
 				data -= 3;
 				update(button);
 			}

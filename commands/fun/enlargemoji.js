@@ -29,9 +29,9 @@ module.exports = {
     } else {
       let CheckEmoji = parse(emoji, { assetType: "png" });
       if (!CheckEmoji[0])
-        return message.channel.send(`Please Give Me A Valid Emoji!`);
+        {return message.channel.send(`Please Give Me A Valid Emoji!`);}
       message.channel.send(
-        `You Can Use Normal Emoji Without Adding In Server!`
+        `You Can Use Normal Emoji Without Adding In Server!`,
       );
     }
   },

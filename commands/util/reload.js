@@ -4,7 +4,7 @@ const {
 	Message,
 	MessageEmbed,
 	Collection,
-	Intents
+	Intents,
 } = require("discord.js");
 
 module.exports = {
@@ -12,9 +12,9 @@ module.exports = {
 	description: 'Reload commands without hassle',
 	run: async (client, message, args) => {
 	if (message.author.id !== "585251212321095690")
-	  return message.reply(
-     `This command can only be used by VenomousSteam81#7772!`
-  	);
+	  {return message.reply(
+     `This command can only be used by VenomousSteam81#7772!`,
+  	);}
 		const commandName = args[0];
 		const command = message.client.commands.get(commandName)
 			|| message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));

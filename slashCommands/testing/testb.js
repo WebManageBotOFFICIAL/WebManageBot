@@ -6,8 +6,8 @@ module.exports = {
     run: async (client, interaction, args) => {
         const e = new MessageEmbed()
             .setTitle('test w/buttons')
-            .setDescription('test w/buttons')
-        
+            .setDescription('test w/buttons');
+
         const r = new MessageActionRow()
         .addComponents(
             new MessageButton()
@@ -22,8 +22,8 @@ module.exports = {
                 .setCustomId('3')
                 .setLabel('BAD')
                 .setStyle('DANGER')
-                .setDisabled('true')
+                .setDisabled('true'),
         );
-    await interaction.reply({ content: 'b', embeds: [e], components: [r] })
-    }
-}
+    await interaction.reply({ content: 'b', embeds: [e], components: [r] });
+    },
+};

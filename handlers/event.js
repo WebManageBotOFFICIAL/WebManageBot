@@ -5,7 +5,7 @@ module.exports = (client) => {
   try {
       fs.readdirSync("./events/").forEach((file) => {
           const events = fs.readdirSync("./events/").filter((file) =>
-            file.endsWith(".js")
+            file.endsWith(".js"),
           );
           for (let file of events) {
             let pull = require(`../events/${file}`);
@@ -18,4 +18,4 @@ module.exports = (client) => {
   } catch (e) {
       console.log(e);
   }
-}
+};
