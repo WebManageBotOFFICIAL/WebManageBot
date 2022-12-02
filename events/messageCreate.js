@@ -1,28 +1,28 @@
-const { Message, MessageContent, MessageEmbed, Collection } = require('../..');
-const config = require("../../configs/config.json");
-let ee = require("../../configs/embed.json");
-const client = require("../..");
-const prefix = process.env.defaultPrefix;
+const { Message, MessageContent, MessageEmbed, Collection } = require('..');
+const config = require("../configs/config.json");
+let ee = require("../configs/embed.json");
+const client = require("..");
+const defaultPrefix = process.env.defaultPrefix;
 
 client.on("messageCreate", async (message) => {
-	const { escapeRegex, onCoolDown } = require("../../utils/function.js");
+	const { escapeRegex, onCoolDown } = require("../utils/function.js");
 	if (!message.guild) return;
 	if (message.author.bot) return;
 	if (message.channel.partial) await message.channel.fetch();
 	if (message.partial) await message.fetch();
 	// if (blockedUsers.includes(message.user.id)) return message.reply(`You were blocked for reason`);
 	const prefixRegex = new RegExp(
-		`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`,
+		`^(<@!?${client.user.id}>|${escapeRegex(defaultPrefix)})\\s*`,
 	);
 	if (!prefixRegex.test(message.content)) return;
 	const [, matchedPrefix] = message.content.match(prefixRegex);
 	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
 	const cmd = args.shift().toLowerCase();
-	// Retrieve mention prefix
+	// Retrieve mention defaultPrefix
 	if (cmd.length === 0) {
 		if (matchedPrefix.includes(client.user.id)) {
 			message.reply(
-				`To see all commands type: ${prefix}help`,
+				`To see all commands type: ${defaultPrefix}help`,
 			);
 		}
 	}
@@ -38,7 +38,6 @@ client.on("messageCreate", async (message) => {
 				.setDescription(`❌ Please wait ${onCoolDown(message, command)} more second(s) before reusing the ${command.name} command.`);
 			return message.channel.send({ embeds: [cool] });
 		}
-		// await command.run(client, message, args, prefix),
-		console.log(client, message, args, prefix);
+		await command.run(client, message, args, defaultPrefix);
 	}
 });

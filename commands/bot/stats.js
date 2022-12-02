@@ -3,12 +3,13 @@ const moment = require('moment');
 const { mem, cpu, os } = require('node-os-utils');
 const { stripIndent } = require('common-tags');
 const config = require('../../configs/config.json');
+const defaultPrefix = process.env.defaultPrefix;
 
 module.exports = {
 	name: "stats",
 	aliases: [ "botinfo", "status", "debug", "deb" ],
 	description: 'Show my `status`',
-	run: async (client, message, args, prefix) => {
+	run: async (client, message, args, defaultPrefix) => {
 		let ramUsage = process.memoryUsage().heapUsed / 1024;
 		const d = moment.duration(message.client.uptime);
 		const days = (d.days() == 1) ? `${d.days()} day` : `${d.days()} days`;

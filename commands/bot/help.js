@@ -2,7 +2,7 @@ const { MessageEmbed, Message, Client } = require("discord.js");
 const { readdirSync } = require("fs");
 let color = "#36393f";
 const config = require('../../configs/config.json');
-const prefix = process.env.defaultPrefix;
+const defaultPrefix = process.env.defaultPrefix;
 
 module.exports = {
   name: "help",
@@ -41,7 +41,7 @@ module.exports = {
 
         cats = {
           name: name,
-          value: `\`${prefix}help ${dir.toLowerCase()}\``,
+          value: `\`${defaultPrefix}help ${dir.toLowerCase()}\``,
           inline: false,
         };
 
@@ -49,7 +49,7 @@ module.exports = {
       });
       const embed = new MessageEmbed()
         .setTitle(`\`\`Help Menu\`\``)
-        .setDescription(`\`\`My Prefix is : ${prefix} \`\`\n To check out a category, use command ${prefix}help [category] \n\n [Invite Me Now](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=4391570373878&redirect_uri=https%3A%2F%2Fwebmanagebot-production.up.railway.app%2F&response_type=code&scope=identify%20connections%20guilds%20bot) \n [My Support Server](https://discord.gg/aFCQSyzNU8)`)
+        .setDescription(`\`\`My Prefix is : ${defaultPrefix} \`\`\n To check out a category, use command ${defaultPrefix}help [category] \n\n [Invite Me Now](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=4391570373878&redirect_uri=https%3A%2F%2Fwebmanagebot-production.up.railway.app%2F&response_type=code&scope=identify%20connections%20guilds%20bot) \n [My Support Server](https://discord.gg/aFCQSyzNU8)`)
         .addFields(categories)
         .setFooter(`Requested by ${message.author.tag}`)
         .setTimestamp()
@@ -117,7 +117,7 @@ module.exports = {
             } Commands!__`,
           )
           .setDescription(
-            `Use \`${prefix}help\` followed by a command name to get more information on a command.\nFor example: \`${prefix}help ping\`\n\n`,
+            `Use \`${defaultPrefix}help\` followed by a command name to get more information on a command.\nFor example: \`${defaultPrefix}help ping\`\n\n`,
           )
           .addFields(catts)
           .setColor(color);
@@ -128,7 +128,7 @@ module.exports = {
       if (!command) {
         const embed = new MessageEmbed()
           .setTitle(
-            `Invalid command! Use \`${prefix}help\` for all of my commands!`,
+            `Invalid command! Use \`${defaultPrefix}help\` for all of my commands!`,
           )
           .setColor("RED");
         return message.channel.send({ embeds: [embed] });
@@ -149,8 +149,8 @@ module.exports = {
         .addField(
           "Usage:",
           command.usage
-            ? `\`${prefix}${command.name} ${command.usage}\``
-            : `\`${prefix}${command.name}\``,
+            ? `\`${defaultPrefix}${command.name} ${command.usage}\``
+            : `\`${defaultPrefix}${command.name}\``,
         )
         .addField(
           "Command Description:",

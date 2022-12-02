@@ -3,7 +3,7 @@ const moment = require('moment');
 const { mem, cpu, os } = require('node-os-utils');
 const { stripIndent } = require('common-tags');
 const config = require('../../configs/config.json');
-const prefix = process.env.defaultPrefix;
+const defaultPrefix = process.env.defaultPrefix;
 
 module.exports = {
 	name: "stats",
@@ -17,7 +17,7 @@ module.exports = {
 		const mainStats = stripIndent`
 					Owner      :: VenomousSteam81
 					Host       :: Replit
-					Prefix     :: ${config.prefix}
+					Prefix     :: ${config.defaultPrefix}
 				`;
 		const clientStats = stripIndent`
           Servers    :: ${message.client.guilds.cache.size}

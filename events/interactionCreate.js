@@ -1,4 +1,4 @@
-const client = require('../..');
+const client = require('..');
 
 client.on("interactionCreate", async (interaction) => {
     if (!interaction.isButton()) return;
