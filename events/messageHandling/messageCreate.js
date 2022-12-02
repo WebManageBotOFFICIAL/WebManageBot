@@ -38,7 +38,7 @@ client.on("messageCreate", async (message) => {
 				.setDescription(`❌ Please wait ${onCoolDown(message, command)} more second(s) before reusing the ${command.name} command.`);
 			return message.channel.send({ embeds: [cool] });
 		}
-		await command.run(client, message, args, prefix),
+		// await command.run(client, message, args, prefix),
 		console.log(client, message, args, prefix);
 	}
 });
