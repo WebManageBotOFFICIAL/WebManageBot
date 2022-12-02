@@ -1,28 +1,27 @@
 const client = require('..');
+
+// special defs
+const defaultPrefix = process.env.defaultPrefix;
+const guilds = client.guilds.cache.size;
+const guildUsers = client.users.cache.size;
+
 // const config = require('../configs/config.json');
 
 const activities = [
-	"for the w+help command",
+	`for the ${defaultPrefix}help command`,
+	`${guilds} servers`,
+	`${guildUsers} members`,
 	"my code on github",
-	"some servers",
-	"ur mom",
-	"~/configs/config.json",
 	"index.js",
-	"~/commands/(command folder)/(command).js",
-	"69",
 	"dank memes",
 	"gamers game",
 	"...",
-	"chats",
-	"ur every move",
-	"never gonna give u up, never gonna let u down",
-	"cornhub",
-	"hackers get hacked",
 	"undefined",
 	"for mentions",
 	"javascript",
 	"the air",
 	"all the errors",
+	"loading...",
 ];
 
 client.on("ready", () => {
