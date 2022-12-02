@@ -9,7 +9,7 @@ module.exports = {
 	name: "stats",
 	aliases: [ "botinfo", "status", "debug", "deb" ],
 	description: 'Show my `status`',
-	run: async (client, message, args, defaultPrefix) => {
+	run: async (client, message, args) => {
 		let ramUsage = process.memoryUsage().heapUsed / 1024;
 		const d = moment.duration(message.client.uptime);
 		const days = (d.days() == 1) ? `${d.days()} day` : `${d.days()} days`;

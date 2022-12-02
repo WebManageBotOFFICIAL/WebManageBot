@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'gunfight',
-  	description: "First one to shoot wins!",
+	description: "First one to shoot wins!",
 	aliases: ['gf', 'gun', 'fight'],
 	run: async (client, message, args) => {
 		const opponent = message.mentions.users.first();

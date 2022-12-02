@@ -4,7 +4,7 @@ module.exports = {
 	name: 'rmrole',
 	description: 'remove a role from a user',
 	permissions: 'ADMINISTRATOR',
-	callback: (message, arguments) => {
+	callback: (message, args) => {
 		const targetUser = message.mentions.users.first();
 		if (!targetUser) {
 			message.reply('Please specify someone to give a role to.');
