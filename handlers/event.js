@@ -1,4 +1,5 @@
-const { Client } = require('discord.js');
+/* eslint-disable no-shadow */
+const { Client } = require('..');
 const fs = require('fs');
 
 module.exports = (client) => {

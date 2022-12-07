@@ -1,4 +1,5 @@
-const { Client } = require('discord.js');
+/* eslint-disable no-undef */
+const { Client } = require('..');
 const fs = require('fs');
 
 module.exports = (client) => {

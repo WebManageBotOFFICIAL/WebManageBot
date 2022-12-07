@@ -1,9 +1,12 @@
+/* eslint-disable no-shadow */
 const discord = require('discord.js');
 
 module.exports = {
 	name: 'rmrole',
 	description: 'remove a role from a user',
-	permissions: 'ADMINISTRATOR',
+	usage: 'rmrole <@user> <role name>',
+	userPerms: ["ADMINISTRATOR"],
+	botPerms: ["MANAGE_ROLES"],
 	callback: (message, args) => {
 		const targetUser = message.mentions.users.first();
 		if (!targetUser) {

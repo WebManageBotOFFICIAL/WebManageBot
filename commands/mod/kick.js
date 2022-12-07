@@ -3,11 +3,10 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
 	name: "kick",
-	category: "",
 	description: "Kick the bad user with one shot",
 	usage: "kick <@user> <reason>",
 	userPerms: ["KICK_MEMBERS"],
-	botPerms: ["EMBED_LINKS", "KICK_MEMBERS"],
+	botPerms: ["KICK_MEMBERS"],
 	run: async (client, message, args) => {
 
 		let target = message.mentions.members.first() || message.guild.users.cache.get(args[0]);

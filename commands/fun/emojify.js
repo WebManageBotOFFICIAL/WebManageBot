@@ -25,6 +25,7 @@ module.exports = {
   name: "emojify",
   aliases: "emote",
   description: "Returns provided text in emojify (emotes) form.",
+  usage: "emojify <message>",
   botPerms: ["MANAGE_MESSAGES"],
   run: async (client, message, args) => {
     if (args.length < 1) {

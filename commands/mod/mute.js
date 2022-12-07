@@ -3,7 +3,6 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
 	name: "mute",
-	category: "moderation",
 	description: "Infinitely mute the bad user with one shot",
 	usage: "mute <@user> <reason>",
 	userPerms: ["MANAGE_ROLES"],
@@ -12,15 +11,15 @@ module.exports = {
 		const user = message.mentions.members.first();
 
 		if (!user) {
-			return message.channel.send("\```please mention the members for mute\```");
+			return message.channel.send("```Please mention the members you need to mute.```");
 		}
 		if (user.id === message.author.id) {
-			return message.channel.send("I can't mute you because you are message author");
+			return message.channel.send("I cannot mute you because you are message author");
 		}
 		let reason = args.slice(1).join("");
 
 		if (!reason) {
-			return message.channel.send(" \``` Please give a  reason for muting the mentioned member\``` ");
+			return message.channel.send("```Please give a  reason for muting the mentioned member```");
 		}
 
 		const vrole = user.roles.cache;
@@ -28,7 +27,7 @@ module.exports = {
 		let muterole = message.guild.roles.cache.find(x => x.name === "JAILED");
 
 		if (!muterole) {
-			return message.channel.send("\```Please create a role called JAILED and put it under my role \``` ");
+			return message.channel.send("```Please create a role called JAILED and put it under my role```");
 		}
 
 		await user.roles.remove(vrole);

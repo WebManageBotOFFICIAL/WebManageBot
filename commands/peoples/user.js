@@ -23,6 +23,7 @@ const { emojis, colors, stats, others } = require('../../configs/assets.json');
 module.exports = {
   name: 'userinfo',
   description: 'Check users info',
+  usage: "userinfo <@user>",
   aliases: ['user-info', 'memberinfo', 'whois', 'ui'],
   run: async (client, message, args) => {
 
@@ -71,10 +72,10 @@ module.exports = {
            value: roles.length ? roles.join(", ") : "None",
            inline: true,
        }, {
-				  name: `Stats`,
+          name: `Stats`,
 					value: `${message.author.user.presence.status}`,
 					inline: true,
-			 },
+        },
 
     )
           .setFooter(

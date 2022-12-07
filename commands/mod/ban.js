@@ -2,7 +2,6 @@ const discord = module.require("discord.js");
 
 module.exports = {
   name: "ban",
-  category: "moderation",
   description: "Ban the bad user with one shot",
   usage: "ban <@user> <reason>",
   userPerms: ["BAN_MEMBERS"],

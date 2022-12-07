@@ -5,10 +5,7 @@ module.exports = {
       const { guild } = message;
 
       guild.fetchInvites().then((invites) => {
-        const inviteCounter = {
-          bob: 19,
-          joe: 30,
-        };
+        const inviteCounter = {};
 
         invites.forEach((invite) => {
           const { uses, inviter } = invite;

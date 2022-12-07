@@ -3,6 +3,7 @@ module.exports = {
 	name: "purge",
 	aliases: "clear",
 	description: "Delete the given number of messages in one shot",
+	usage: "purge <message number>",
 	userPerms: ["MANAGE_MESSAGES"],
 	botPerms: ["MANAGE_MESSAGES"],
 	run: async (client, message, args) => {

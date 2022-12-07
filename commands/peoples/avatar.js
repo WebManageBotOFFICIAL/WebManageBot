@@ -3,8 +3,8 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "avatar",
   aliases: "av",
-  usage: "Get an avatar from a user",
   description: "Gives avatar for message author or mentioned user.",
+  usage: "avatar <@user>",
   botPerms: ["EMBED_LINKS", "MANAGE_MESSAGES"],
   run: async (client, message, args) => {
     let user = message.mentions.users.first() || message.author;

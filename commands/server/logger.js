@@ -9,7 +9,7 @@ module.exports = {
     run: async (client, message, args) => {
         const infoEmbed = new MessageEmbed()
           .setTitle('ALERT!')
-          .setDescription(`As of right now, to use my logging features, you need to make a channel called ${idconfig.logOldChannelName}`);
+          .setDescription(`As of right now, to use my logging features, you need to make a channel called ${idConfig.logOldChannelName}`);
 
         message.reply({ embeds: [infoEmbed] });
     },

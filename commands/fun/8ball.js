@@ -15,7 +15,7 @@ function ball() {
 module.exports = {
 	name: "8ball",
 	description: "Ask the 8ball a question, and you will get an answer",
-	run: async (client, message, args) => {
+	run: async (client, message) => {
 		message.reply(ball());
 	},
 };
