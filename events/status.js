@@ -9,8 +9,8 @@ const guildUsers = client.users.cache.size;
 
 const activities = [
 	`for the ${defaultPrefix}help command`,
-	`${guilds} servers`,
-	`${guildUsers} members`,
+//	`${guilds} servers`,
+//	`${guildUsers} members`,
 	"my code on github",
 	"index.js",
 	"dank memes",
