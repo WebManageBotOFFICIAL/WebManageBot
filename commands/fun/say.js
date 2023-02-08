@@ -8,7 +8,9 @@ module.exports = {
 			if (say.includes("@everyone")) {
   				message.reply("The string contains '@everyone'. Please don't try to do that!");
 			} else {
+			try {
 				message.channel.send(say);
-	}
-  },
+			}
+		}
+	},
 };
