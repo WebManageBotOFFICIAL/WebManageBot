@@ -12,7 +12,7 @@ module.exports = {
     if (!args[0]) {
       let categories = [];
 
-      let ignored = ["util", "database", "db"];
+      let ignored = ["utils", "database", "db"];
 
       const emo = {
         bot: "🤖",
@@ -22,6 +22,7 @@ module.exports = {
         server: "📝",
 				games: "🎲",
 				test: "🖼️",
+        utils: "🔧",
       };
 
       const catinfo = {
@@ -32,6 +33,7 @@ module.exports = {
         server: "Manage the server",
 				games: "Gaymerland",
 				test: "Testing commands",
+        utils: "Bot Utilities",
       };
 
       readdirSync("./commands/").forEach((dir) => {
