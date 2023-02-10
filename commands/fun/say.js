@@ -10,6 +10,9 @@ module.exports = {
 			} else {
 			try {
 				message.channel.send(say);
+			} catch (error) {
+				console.log('error'),
+				message.reply(`An error occured! ${error}`);
 			}
 		}
 	},
