@@ -1,3 +1,4 @@
+/*
 const client = require("../..");
 const AntiSpam = require("@devraelfreeze/discordjs-antispam");
 const AntiSpamConfig = require('../../configs/asconfig.json');
@@ -49,3 +50,4 @@ client.on("messageCreate", async (message) => {
 		console.log(error);
 	}
 });
+*/
