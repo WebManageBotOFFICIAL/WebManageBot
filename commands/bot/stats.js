@@ -17,7 +17,7 @@ module.exports = {
 		const minutes = (d.minutes() == 1) ? `${d.minutes()} minute` : `${d.minutes()} minutes`;
 		const mainStats = stripIndent`
 	  	  Owner      :: VenomousSteam81
-	  	  Host       :: [Railway-Hosting](https://railway.app/)
+	  	  Host       :: Railway
 	  	  Prefix     :: ${process.env.defaultPrefix}
 	   `;
 		const clientStats = stripIndent`
