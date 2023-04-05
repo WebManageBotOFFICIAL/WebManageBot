@@ -1,3 +1,5 @@
+const client = require('..');
+
 client.on('ready', () => {
  setInterval(() => {
    const randomMessage = Math.floor(Math.random() * messages.length);
