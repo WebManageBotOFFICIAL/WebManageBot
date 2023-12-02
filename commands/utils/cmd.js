@@ -20,7 +20,7 @@ module.exports = {
 		child.exec(command, (err, res) => {
 			if (err) return console.log(err);
 			if (err) return message.reply(`An error occured: \n ${err}`);
-			message.channel.send(res.slice(0, 2000), { code: 'js' });
+			message.channel.send(res.slice(0, 2000), { code: 'bash' });
 		});
 	},
 };
