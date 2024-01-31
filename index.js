@@ -1,7 +1,6 @@
-const { Client, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
-require('dotenv').config();
-const colors = require('colors');
-const fs = require('fs');
+import { Client, Message, MessageEmbed, WebhookClient, Collection } from 'discord.js';
+import colors from 'colors';
+import fs from 'fs';
 const ee = require('./configs/embed.json');
 const config = require('./configs/config.json');
 // const Keyv = require('keyv');

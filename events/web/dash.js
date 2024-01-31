@@ -1,7 +1,8 @@
 const { request } = require('undici');
 const express = require('express');
 const clientId = require('../../configs/config.json');
-const port = process.env.PORT;
+const url = 'https://discord.com/';
+const port = '3000';
 const clientSecret = process.env.clientSecret;
 
 async function getJSONResponse(body) {
@@ -27,7 +28,7 @@ app.get('/', async ({ query }, response) => {
 					client_secret: clientSecret,
 					code,
 					grant_type: 'authorization_code',
-					redirect_uri: `http://localhost:${port}`,
+					redirect_uri: `${url}:${port}`,
 					scope: 'identify',
 				}),
 				headers: {
@@ -51,7 +52,7 @@ app.get('/', async ({ query }, response) => {
 		}
 	}
 
-	return response.sendFile('./index.html', { root: '.' });
+	return response.sendFile('../../web/index.html', { root: '../../web/' });
 });
 
-app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
+app.listen(port, () => console.log(`App listening at ${url}:${port}`));
