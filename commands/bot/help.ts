@@ -1,8 +1,9 @@
 const { MessageEmbed, Message, Client } = require("discord.js");
 const { readdirSync } = require("fs");
 let color = "#36393f";
+const { defaultPrefix } = require('../../configs/bot.json');
 const config = require('../../configs/config.json');
-const defaultPrefix = process.env.defaultPrefix;
+
 
 module.exports = {
   name: "help",

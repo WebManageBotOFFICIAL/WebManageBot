@@ -1,7 +1,8 @@
 const client = require('..');
+const defaultPrefix = require('../configs/bot.json');
 
 // special defs
-const defaultPrefix = process.env.defaultPrefix;
+
 const guilds = client.guilds.cache.size;
 const guildUsers = client.users.cache.size;
 

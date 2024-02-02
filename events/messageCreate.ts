@@ -2,7 +2,8 @@ const { Message, MessageContent, MessageEmbed, Collection } = require('..');
 const config = require("../configs/config.json");
 let ee = require("../configs/embed.json");
 const client = require("..");
-const defaultPrefix = process.env.defaultPrefix;
+const { defaultPrefix } = require('../configs/bot.json');
+
 
 client.on("messageCreate", async (message) => {
 	const { escapeRegex, onCoolDown } = require("../utils/function.ts");

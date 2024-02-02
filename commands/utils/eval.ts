@@ -8,6 +8,7 @@ let assets = require("../../configs/assets.json");
 let embeds = require("../../configs/embed.json");
 let pkg = require("../../package.json");
 let pkglock = require("../../package-lock.json");
+let botconfig = require('../../configs/bot.json');
 
 module.exports = {
 	name: "eval",

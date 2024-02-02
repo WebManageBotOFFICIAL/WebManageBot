@@ -1,12 +1,13 @@
 const { Client, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
-require('dotenv').config();
+// require('dotenv').config();
+const { token, defaultPrefix, webhook_ID, webhook_Secret } = require('./configs/bot.json');
 const colors = require('colors');
 const fs = require('fs');
 const ee = require('./configs/embed.json');
 const config = require('./configs/config.json');
 // const Keyv = require('keyv');
 // const keyv = new Keyv(`mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASSWORD}@${process.env.MONGOHOST}:${process.env.MONGOPORT}`, { collection: 'userBans' });
-const defaultPrefix = process.env.defaultPrefix;
+
 
 const client = new Client({
 	messageCacheLifetime: 60,
@@ -41,8 +42,11 @@ const client = new Client({
 module.exports = client;
 
 const Errorhandler = require('discord-error-handler');
-const handle = new Errorhandler(client, {
+/* const handle = new Errorhandler(client, {
 	webhook: { id: process.env.webhook_ID, token: process.env.webhook_Secret },
+}); */
+const handle = new Errorhandler(client, {
+	webhook: { id: webhook_ID, token: webhook_Secret },
 });
 
 client.commands = new Collection();
@@ -56,7 +60,7 @@ client.categories = fs.readdirSync('./commands/');
 	require(`./handlers/${handler}`)(client);
 });
 
-client.login(process.env.token);
+client.login(token);
 
 process.on("unhandledRejection", (reason, p) => {
 	console.log(reason, p),
