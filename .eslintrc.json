@@ -45,7 +45,6 @@
 		"quotes": "off",
 		"prefer-const": "off",
 		"no-unused-vars": "off",
-		"no-inline-comments": "off",
-		"type": "module"
+		"no-inline-comments": "off"
 	}
 }

@@ -1,6 +1,7 @@
-import { Client, Message, MessageEmbed, WebhookClient, Collection } from 'discord.js';
-import colors from 'colors';
-import fs from 'fs';
+const { Client, Message, MessageEmbed, WebhookClient, Collection } = require('discord.js');
+require('dotenv').config();
+const colors = require('colors');
+const fs = require('fs');
 const ee = require('./configs/embed.json');
 const config = require('./configs/config.json');
 // const Keyv = require('keyv');
@@ -41,7 +42,7 @@ module.exports = client;
 
 const Errorhandler = require('discord-error-handler');
 const handle = new Errorhandler(client, {
-	webhook: { id: process.env.webhook_id, token: process.env.webhook_token },
+	webhook: { id: process.env.webhook_ID, token: process.env.webhook_Secret },
 });
 
 client.commands = new Collection();
@@ -51,7 +52,7 @@ client.cooldowns = new Collection();
 client.slashCommands = new Collection();
 client.categories = fs.readdirSync('./commands/');
 
-['command', 'event', 'slash'].forEach((handler) => {
+['command.ts', 'event.ts', 'slash.ts'].forEach((handler) => {
 	require(`./handlers/${handler}`)(client);
 });
 

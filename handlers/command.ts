@@ -6,8 +6,7 @@ module.exports = (client) => {
     try {
         let command = 0;
         fs.readdirSync("./commands").forEach(cmd => {
-
-            let commands = fs.readdirSync(`./commands/${cmd}/`).filter((file) => file.endsWith(".js"));
+            let commands = fs.readdirSync(`./commands/${cmd}/`).filter((file) => file.endsWith(".ts"));
             for (cmds of commands) {
                 let pull = require(`../commands/${cmd}/${cmds}`);
                 if (pull.name) {

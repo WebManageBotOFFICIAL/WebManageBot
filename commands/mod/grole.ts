@@ -7,7 +7,7 @@ module.exports = {
 	botPerms: ["MANAGE_ROLES"],
 	callback: (message, args) => {
         if (message.author.id !== "585251212321095690") {
-            return message.reply(`This command can only be used by VenomousSteam81#7772!`);
+            return message.reply(`This command can only be used by vsteam81!`);
         }
 		const targetUser = message.mentions.users.first();
 		if (!targetUser) {

@@ -494,5 +494,5 @@ client.on("voiceStreamingStart", async (message, member, voiceChannel) => {
 });
 /*
 Made by: FiredragonPlayz#0087,
-Modified by: VenomousSteam81#7772 (making it properly work with my setup)
+Modified by: vsteam81 (making it properly work with my setup)
 */

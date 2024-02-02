@@ -8,7 +8,7 @@ module.exports = {
 	run: async (client, message, args) => {
 		if (message.author.id !== "585251212321095690")
 	  {return message.reply(
-     `This command can only be used by VenomousSteam81#7772!`,
+     `This command can only be used by vsteam81!`,
   	);}
 
 		const userID = args.shift().toLowerCase();

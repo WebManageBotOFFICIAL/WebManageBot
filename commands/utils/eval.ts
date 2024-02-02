@@ -1,12 +1,6 @@
 const Discord = require("discord.js");
 const child = require("child_process");
-const {
-	Client,
-	Message,
-	MessageEmbed,
-	Collection,
-	Intents,
-} = require("discord.js");
+const { Client, Message, MessageEmbed, Collection, Intents } = require("discord.js");
 const fs = require("fs");
 // these are config files that can easily be evaluated by venom only UNLESS you fork the code, then you can change the author id to your id. maybe one day venom (or other user) will make an automatic system to search for config files
 let config = require("../../configs/config.json");
@@ -25,7 +19,7 @@ module.exports = {
 		const { inspect } = require("util");
 		if (message.author.id !== "1171815351487565894")
 			{return message.reply(
-				`This command can only be used by VenomousSteam81#7772!`,
+				`This command can only be used by vsteam81!`,
 			);}
 
 		if (!evalcommand)

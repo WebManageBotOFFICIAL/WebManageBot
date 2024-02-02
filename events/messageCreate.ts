@@ -5,7 +5,7 @@ const client = require("..");
 const defaultPrefix = process.env.defaultPrefix;
 
 client.on("messageCreate", async (message) => {
-	const { escapeRegex, onCoolDown } = require("../utils/function.js");
+	const { escapeRegex, onCoolDown } = require("../utils/function.ts");
 	if (!message.guild) return;
 	if (message.author.bot) return;
 	if (message.channel.partial) await message.channel.fetch();

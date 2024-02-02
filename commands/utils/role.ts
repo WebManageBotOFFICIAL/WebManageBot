@@ -1,9 +1,4 @@
-const {
-	Client,
-	Message,
-	MessageEmbed,
-	Formatters,
-} = require("discord.js");
+const { Client, Message, MessageEmbed, Formatters } = require("discord.js");
 
 module.exports = {
 	name: "role",

@@ -70,7 +70,7 @@ module.exports = {
       readdirSync("./commands/").forEach((dir) => {
         if (dir.toLowerCase() !== args[0].toLowerCase()) return;
         const commands = readdirSync(`./commands/${dir}/`).filter((file) =>
-          file.endsWith(".js"),
+          file.endsWith(".ts"),
         );
 
         const cmds = commands.map((command) => {
@@ -78,7 +78,7 @@ module.exports = {
 
           if (!file.name) return "No command name.";
 
-          let name = file.name.replace(".js", "");
+          let name = file.name.replace(".ts", "");
 
           let des = `${client.commands.get(name).description}`;
           let emo = `✅`;

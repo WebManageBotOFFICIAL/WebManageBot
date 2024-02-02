@@ -7,7 +7,7 @@ module.exports = (client) => {
         let command = 0;
         const arrayOfSlashCommands = [];
         fs.readdirSync("./slashCommands").forEach(cmd => {
-            let commands = fs.readdirSync(`./slashCommands/${cmd}/`).filter((file) => file.endsWith(".js"));
+            let commands = fs.readdirSync(`./slashCommands/${cmd}/`).filter((file) => file.endsWith(".ts"));
             for (cmds of commands) {
                 let pull = require(`../slashCommands/${cmd}/${cmds}`);
                 if (pull.name) {
