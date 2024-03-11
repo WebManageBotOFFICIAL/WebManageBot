@@ -10,3 +10,4 @@ replit.nix
 indext.js
 logs.txt
 .vscode
+configs/bot.json
