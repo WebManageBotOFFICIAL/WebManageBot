@@ -6,7 +6,7 @@ module.exports = {
 	description: "Executes remote commands from discord to host",
 	aliases: "cmd",
 	run: async (client, message, args) => {
-  if (message.author.id !== "585251212321095690")
+  if (message.author.id !== "1171815351487565894")
 	{return message.reply(
      `This command can only be used by vsteam81!`,
 	);}

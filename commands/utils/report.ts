@@ -9,7 +9,7 @@ module.exports = {
     const handle = new Errorhandler(client, {
         webhook: { id: process.env.webhook_id, token: process.env.webhook_token },
     });
-  if (message.author.id !== "585251212321095690")
+  if (message.author.id !== "1171815351487565894")
 	  {return message.reply(
      `This command can only be used by vsteam81!`,
   	);}

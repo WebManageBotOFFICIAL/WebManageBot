@@ -9,7 +9,7 @@ module.exports = {
   description: "use libcurl.js",
   run: async (client, message, args) => {
     let libcurl = await import('../../node_modules/libcurl.js/libcurl.mjs');
-		if (message.author.id !== "585251212321095690")
+		if (message.author.id !== "1171815351487565894")
       {
         return message.reply(`This command can only be used by vsteam81!`);
     }

@@ -6,7 +6,7 @@ module.exports = {
 	name: "userBan",
 	description: "Ban a user from using WebManageBot",
 	run: async (client, message, args) => {
-		if (message.author.id !== "585251212321095690")
+		if (message.author.id !== "1171815351487565894")
 	  {return message.reply(
      `This command can only be used by vsteam81!`,
   	);}
