@@ -1,4 +1,6 @@
-# THIS IS [WEBMANAGEBOT](https://discord.com/api/oauth2/authorize?client_id=1200114838383382598&permissions=8&scope=bot), a Discord bot.
+# THIS IS [WEBMANAGEBOT](https://discord.com/api/oauth2/authorize?client_id=1200114838383382598&permissions=8&scope=bot), a defunct Discord bot.
+
+## THIS BOT MOST LIKELY DOES NOT WORK ANYMORE!
 
 ## A Discord bot with an easy to use, multi-purpose, and resource-hog free website for optimal performance on low-end desktops AND mobile!
 
